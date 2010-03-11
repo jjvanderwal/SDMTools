@@ -15,15 +15,17 @@ function (file, gz=FALSE) {
 		#lower left corner
 		xll <- readLines(zz, 1); xll <- strsplit(xll, " ")
 		yll <- readLines(zz, 1); yll <- strsplit(yll, " ")
-		#ensure xll & yll are centers of the cells
-		if ((xll[[1]][1] == "xllcenter") | (xll[[1]][1] == "XLLCENTER")) { xll=as.numeric(xll[[1]][length(xll[[1]])]) } else { xll=as.numeric(xll[[1]][length(xll[[1]])])+ cs/2 }
-		if ((yll[[1]][1] == "yllcenter") | (xll[[1]][1] == "YLLCENTER")) { yll=as.numeric(yll[[1]][length(yll[[1]])]) } else { yll=as.numeric(yll[[1]][length(yll[[1]])])+ cs/2 }
 		#cell size
 		cs <- readLines(zz, 1); cs <- strsplit(cs, " "); cs <- as.numeric(cs[[1]][length(cs[[1]])])
 		#nodata value
 		nas <- readLines(zz, 1); nas <- strsplit(nas, " "); nas <- as.numeric(nas[[1]][length(nas[[1]])])
 	#close the link to the file
 	close(zz)
+	
+	#ensure xll & yll are centers of the cells
+	if ((xll[[1]][1] == "xllcenter") | (xll[[1]][1] == "XLLCENTER")) { xll=as.numeric(xll[[1]][length(xll[[1]])]) } else { xll=as.numeric(xll[[1]][length(xll[[1]])])+ cs/2 }
+	if ((yll[[1]][1] == "yllcenter") | (xll[[1]][1] == "YLLCENTER")) { yll=as.numeric(yll[[1]][length(yll[[1]])]) } else { yll=as.numeric(yll[[1]][length(yll[[1]])])+ cs/2 }
+	
 
 	#read in the data skipping the first six header rows
 	output <- scan(file,skip=6, quiet = TRUE)
