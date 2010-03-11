@@ -16,15 +16,16 @@ These functions are faster methods based on the adehabitat import.asc and
 export.asc.
 }
 \usage{
-read.asc(file)
+read.asc(file,gz=FALSE)
 read.asc.gz(file)
-write.asc(x,file)
+write.asc(x,file,gz=FALSE)
 write.asc.gz(x,file)
 }
 
 \arguments{
   \item{file}{a character string representing the filename of the input/output 
 file. The file extension should always be '.asc'.}
+  \item{gz}{defines if the object is or should be compressed using gzip}
   \item{x}{an object of class 'asc' as defined in the adehabitat package}
 }
 \details{

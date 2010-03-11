@@ -14,10 +14,8 @@ R/compare.matrix.R -text
 R/extract.data.R -text
 R/lcmw.R -text
 R/read.asc.R -text
-R/read.asc.gz.R -text
 R/shape.index.R -text
 R/write.asc.R -text
-R/write.asc.gz.R -text
 man/Istat.Rd -text
 man/SDMTools-package.Rd -text
 man/Scalebar.Rd -text
