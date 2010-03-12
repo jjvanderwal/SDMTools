@@ -28,7 +28,7 @@ function (file, gz=FALSE) {
 	
 
 	#read in the data skipping the first six header rows
-	output <- scan(file,skip=6, quiet = TRUE)
+	if (gz) { zz = gzfile(file, "r"); output <- scan(zz,skip=6,nlines=nl,quiet = TRUE); close(zz) } else { output <- scan(file,skip=6, quiet = TRUE) }
 
 	#convert no data to NA
 	output[output == nas] <- NA
