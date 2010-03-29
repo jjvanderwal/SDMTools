@@ -16,7 +16,10 @@ R/lcmw.R -text
 R/read.asc.R -text
 R/shape.index.R -text
 R/write.asc.R -text
+man/ClassStat.Rd -text
+man/ConnCompLabel.Rd -text
 man/Istat.Rd -text
+man/PatchStat.Rd -text
 man/SDMTools-package.Rd -text
 man/Scalebar.Rd -text
 man/SigDiff.Rd -text
