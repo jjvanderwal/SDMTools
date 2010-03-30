@@ -27,27 +27,27 @@ The class statistics are based on statistics calculated by fragstats
 
 \value{
 a data.frame listing
-  \item{class}{...}
-  \item{n.patches}{...}
-  \item{total.area}{...}
+  \item{class}{measure of landscape composition, how much of the landscape is comprised of a particular patch type.}
+  \item{n.patches}{the number of patches of a particular patch type or in a class.}
+  \item{total.area}{the sum of the areas (m2) of all patches of the corresponding patch type.}
   \item{prop.landscape}{...}
-  \item{patch.density}{...}
-  \item{total.edge}{...}
-  \item{edge.density}{...}
-  \item{landscape.shape.index}{...}
-  \item{largest.patch.index}{...}
-  \item{mean.patch.area}{...}
-  \item{sd.patch.area}{...}
-  \item{min.patch.area}{...}
-  \item{max.patch.area}{...}
-  \item{perimeter.area.frac.dim}{...}
-  \item{mean.perim.area.ratio}{...}
-  \item{sd.perim.area.ratio}{...}
-  \item{min.perim.area.ratio}{...}
-  \item{max.perim.area.ratio}{...}
-  \item{mean.shape.index}{...}
-  \item{sd.shape.index}{...}
-  \item{min.shape.index}{...}
+  \item{patch.density}{the numbers of patches of the corresponding patch type divided by total landscape area (m2).}
+  \item{total.edge}{the total edge length of a particular patch type.}
+  \item{edge.density}{edge length on a per unit area basis that facilitates comparison among landscapes of varying size.}
+  \item{landscape.shape.index}{a standardized measure of total edge or edge density that adjusts for the size of the landscape.}
+  \item{largest.patch.index}{Largest patch index quantifies the percentage of total landscape area comprised by the largest patch.}
+  \item{mean.patch.area}{average area of patches.}
+  \item{sd.patch.area}{Standard deviation of patch areas.}
+  \item{min.patch.area}{the minimum patch area of the total patch areas. }
+  \item{max.patch.area}{the maximum patch area of the total patch areas.}
+  \item{perimeter.area.frac.dim}{perimeter-area fractal dimension equals 2 divided by the slope of regression line obtained by regressing the logarithm of patch area (m2) against the logarithm of patch perimeter (m).}
+  \item{mean.perim.area.ratio}{the mean of the ratio patch perimeter. The perimeter-area ratio equals to the ratio of the patch perimeter (m) to area (m2).}
+  \item{sd.perim.area.ratio}{standard deviation of the ratio patch perimeter.}
+  \item{min.perim.area.ratio}{Minimum perimeter area ratio}
+  \item{max.perim.area.ratio}{Maximum perimeter area ratio.}
+  \item{mean.shape.index}{ mean of shape index}
+  \item{sd.shape.index}{standard deviation of shape index.}
+  \item{min.shape.index}{the minimum shape index.}
   \item{max.shape.index}{...}
   \item{mean.frac.dim.index}{...}
   \item{sd.frac.dim.index}{...}

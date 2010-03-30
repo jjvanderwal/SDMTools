@@ -26,18 +26,18 @@ The patch statistics are based on statistics calculated by fragstats
 
 \value{
 a data.frame listing
-  \item{patchID}{...}
-  \item{n.cell}{...}
-  \item{n.core.cell}{...}
-  \item{n.edges.perimeter}{...}
-  \item{n.edges.internal}{...}
-  \item{area}{...}
-  \item{core.area}{...}
-  \item{perimeter}{...}
-  \item{perim.area.ratio}{...}
-  \item{shape.index}{...}
-  \item{frac.dim.index}{...}
-  \item{core.area.index}{...}
+  \item{patchID}{the unique ID for each patch.}
+  \item{n.cell}{the number of cells for each patch, specified in square meters.}
+  \item{n.core.cell}{the number of cells in the core area, without the edge area}
+  \item{n.edges.perimeter}{the number of outside edges perimeter of the patches (given in number of cell surfaces).}
+  \item{n.edges.internal}{the number of internal edges perimeter of the patches}
+  \item{area}{the area of each patch comprising a landscape mosaic.}
+  \item{core.area}{represents the interior area of the patch, greater than the specified depth-of-edge distance from the perimeter.}
+  \item{perimeter}{the perimeter of the patch, including any internal holes in the patch, specified in meters.}
+  \item{perim.area.ratio}{the ratio of the patch perimeter (m) to area (m2).}
+  \item{shape.index}{the shape complexity, sum of each patches perimeter divided by the square root of patch area.}
+  \item{frac.dim.index}{fractal dimension index reflects shape complexity across a range of spatial scales; approaches 2 times the logarithm of patch perimeter (m) divided by the logarithm of patch area (m2).}
+  \item{core.area.index}{quantifies core area as a percentage of patch area.}
 }
 
 \author{Jeremy VanDerWal \email{jjvanderwal@gmail.com}}
