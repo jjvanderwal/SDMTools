@@ -31,7 +31,8 @@ a data.frame listing
   \item{n.core.cell}{...}
   \item{n.edges.perimeter}{...}
   \item{n.edges.internal}{...}
-  \item{area core.area}{...}
+  \item{area}{...}
+  \item{core.area}{...}
   \item{perimeter}{...}
   \item{perim.area.ratio}{...}
   \item{shape.index}{...}
