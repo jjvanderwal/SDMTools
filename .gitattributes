@@ -9,12 +9,10 @@ R/Istat.R -text
 R/PatchStat.R -text
 R/Scalebar.R -text
 R/SigDiff.R -text
-R/aggregation.index.R -text
 R/compare.matrix.R -text
 R/extract.data.R -text
 R/lcmw.R -text
 R/read.asc.R -text
-R/shape.index.R -text
 R/write.asc.R -text
 man/ClassStat.Rd -text
 man/ConnCompLabel.Rd -text
