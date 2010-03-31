@@ -19,8 +19,10 @@ compare.matrix(x,y,nbins,...)
 }
 
 \arguments{
-  \item{x}{a matrix of data}
-  \item{y}{a matrix of data of the same extent as 'x'}
+  \item{x}{a matrix of data; the matrix can be a raster of class 'asc' 
+  (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' 
+  (sp package)}
+  \item{y}{a matrix of data of the same extent, cell size and class as 'x'}
   \item{nbins}{number of equally spaced bins used to partition range of values
   in 'x' & 'y'}
   \item{...}{other graphical parameters defined by image(), contour(), or plot()}

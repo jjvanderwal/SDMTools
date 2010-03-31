@@ -1,3 +1,6 @@
+2010-03-31 jjvanderwal
+- added functionality to permit use of raster information from raster and sp packages
+
 2010-02-22 jjvanderwal
 - added functions of ConnCompLabel, PatchStats and ClassStat
 - corrected read.asc.gz

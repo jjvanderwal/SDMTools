@@ -6,15 +6,18 @@
 
 \description{
 \code{ClassStat} calculates the class statistics for patch types
-identified in a matrix of data.  
+identified in a matrix of data or in a raster of class 'asc' (adehabitat package),
+'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package).  
 }
 
 \usage{
 ClassStat(mat,cellsize=1,bkgd=NA)
 }
 \arguments{
-  \item{mat}{a matrix of data with individual patches identified as with
-  \code{ConnCompLabel}}
+  \item{mat}{a matrix of data with individual patches identified (unique integer
+  values) as with \code{ConnCompLabel}. Matrix can be a raster of class 'asc' 
+  (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame'
+  (sp package)}
   \item{cellsize}{cell size (in meters) is a single value representing the width/height
   of cell edges (assuming square cells)}
   \item{bkgd}{the background value for which statistics will not be calculated}

@@ -1,5 +1,15 @@
 lcmw <-
 function(mat,mw,mnc) {
+	#check input for class for returning info
+	if (class(mat) == 'asc') { 
+		attrib = attributes(mat)
+	} else if (any(class(mat) %in% 'RasterLayer')) {
+		attrib = mat; mat = asc.from.raster(mat)
+	} else if (any(class(mat) == 'SpatialGridDataFrame')) {
+		attrib = mat; mat = asc.from.sp(mat)
+	} else {
+		attrib = attributes(mat)
+	}
 	#buffer edges by full number of distance cells
 	#define the shifts in mat to account for a moving window...
 	vals = expand.grid(Y=-mnc:mnc,X=-mnc:mnc) #define all shifts
@@ -30,6 +40,13 @@ function(mat,mw,mnc) {
 		}
 		cat('done\n')
 	}
-  	return(out)
+	#reset the attributes of the input
+	if (any(class(attrib) %in% 'RasterLayer')) {
+		attrib = setValues(attrib, as.vector(t(t(unclass(out))[dim(out)[2]:1,]))); return(attrib)
+	} else if (any(class(attrib) == 'SpatialGridDataFrame')) {
+		attrib@data[1] = as.vector(unclass(out)[,dim(out)[2]:1]); return(attrib)
+	} else {
+		attributes(out) = attrib; return(out)
+	}
 }
 

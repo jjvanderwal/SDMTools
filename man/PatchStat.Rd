@@ -6,15 +6,18 @@
 
 \description{
 \code{PatchStat} calculates the patch statistics for individual patches
-identified in a matrix of data.  
+identified in a matrix of data. The matrix can be a raster of class 'asc' 
+(adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' 
+(sp package).
 }
 
 \usage{
 PatchStat(mat,cellsize=1)
 }
 \arguments{
-  \item{mat}{a matrix of data with individual patches identified as with
-  \code{ConnCompLabel}}
+  \item{mat}{a matrix of data with individual patches identified as with \code{ConnCompLabel};
+  The matrix can be a raster of class 'asc' (adehabitat package), 'RasterLayer' 
+  (raster package) or 'SpatialGridDataFrame' (sp package)}
   \item{cellsize}{cell size (in meters) is a single value representing the width/height
   of cell edges (assuming square cells)}
 }

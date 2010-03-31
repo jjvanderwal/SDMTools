@@ -17,8 +17,10 @@ Istat(x,y)
 }
 
 \arguments{
-  \item{x}{a vector or matrix of data}
-  \item{y}{a vector or matrix of data with the same dimensions of 'x'}
+  \item{x}{a vector or matrix of data; the matrix can be a raster of class 'asc' 
+  (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' 
+  (sp package)}
+  \item{y}{a vector or matrix of data with the same dimensions and class of 'x'}
 }
 
 \details{

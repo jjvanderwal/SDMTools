@@ -26,11 +26,15 @@ ImageDiff(tasc,sig.levels=c(0.025,0.975),tcol=terrain.colors(3),...)
 }
 
 \arguments{
-  \item{x}{a vector or matrix of data}
-  \item{y}{a vector or matrix of data with the same dimensions of 'x'}
+  \item{x}{a vector or matrix of data; the matrix can be of can be a raster of 
+  class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 
+  'SpatialGridDataFrame' (sp package)}
+  \item{y}{a vector or matrix of data with the same dimensions and class of 'x'}
   \item{pattern}{logical value defining if differences are respective to relative
   patterning (TRUE) or absolute values (FALSE)}
-  \item{tasc}{a matrix of probability values (0 to 1) likely created by \code{SigDiff}}
+  \item{tasc}{a matrix of probability values (0 to 1) likely created by \code{SigDiff};
+  The matrix can be a raster of class 'asc' (adehabitat package), 'RasterLayer' 
+  (raster package) or 'SpatialGridDataFrame' (sp package)}
   \item{sig.levels}{the significance levels to define significantly above and below. 
   Default settings represent significance at the 0.05 level}
   \item{tcol}{a set of 3 colors for use in the image to represent significantly 
@@ -39,9 +43,9 @@ ImageDiff(tasc,sig.levels=c(0.025,0.975),tcol=terrain.colors(3),...)
 }
 
 \value{
-\code{SigDiff} returns a vector or matrix of the same dimensions of the input 
-representing the significance of the pairwise difference relative to the mean 
-and variance of all differences between the two inputs.
+\code{SigDiff} returns a vector or matrix of the same dimensions and class of 
+the input representing the significance of the pairwise difference relative to 
+the mean and variance of all differences between the two inputs.
 
 \code{ImageDiff} returns nothing but creates an image of the areas of 
 significant differences

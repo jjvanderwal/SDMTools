@@ -5,6 +5,9 @@
 
 ClassStat <- 
 function(mat,cellsize=1,bkgd=NA) {
+	#check if raster from sp or raster package and convert if necessary
+	if (any(class(mat) %in% 'RasterLayer')) mat = asc.from.raster(mat)
+	if (any(class(mat) == 'SpatialGridDataFrame')) mat = asc.from.sp(mat)
 	#check to ensure matrix
 	mat = try(as.matrix(mat))
 	if (!is.matrix(mat)) stop('objects must be a matrix')

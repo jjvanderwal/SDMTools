@@ -4,7 +4,8 @@
 
 \title{ Spatial Join of Points with Raster Grids }
 \description{
-\code{extract.data} extracts data from raster object of class 'asc' at 
+\code{extract.data} extracts data from raster object of class 'asc' (adehabitat package), 
+'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package) at 
 specified locations. This represents a faster version of 'join.asc' of the 
 adehabitat package that assumes all locations are within the map extents.
 
@@ -18,7 +19,8 @@ extract.data(pts,x)
 \arguments{
   \item{pts}{a two-column data frame with the x and y coordinates of the 
   locations of interest.}
-  \item{x}{an object of class "asc" as defined in the adehabitat package}
+  \item{x}{a raster matrix of class 'asc' (adehabitat package), 'RasterLayer' 
+  (raster package) or 'SpatialGridDataFrame' (sp package)}
 }
 \details{
 Implements a faster version of 'join.asc' from the adehabitat package. 

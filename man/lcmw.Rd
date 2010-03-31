@@ -14,7 +14,9 @@ lcmw(mat, mw, mnc)
 
 \arguments{
   \item{mat}{a matrix of values that can be based on a raster dataset. Lower values
-  should represent lower cost.}
+  should represent lower cost. The matrix can be a raster of class 'asc' 
+  (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame'
+  (sp package)}
   \item{mw}{a distance-cost matrix to be applied to each cell of 'mat'. This matrix 
   can be dispersal costs. Lower values should represent lower cost.}
   \item{mnc}{an integer value representing the maximun number radius for 'mw'}

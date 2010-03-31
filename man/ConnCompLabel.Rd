@@ -7,6 +7,9 @@
 \description{
 \code{ConnCompLabel} is a 1 pass implementation of connected components 
 labelling. Here it is applied to identify disjunt patches of a distribution.
+
+The raster matrix can be a raster of class 'asc' (adehabitat package), 
+'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)
 }
 
 \usage{
@@ -14,12 +17,14 @@ ConnCompLabel(mat)
 }
 \arguments{
   \item{mat}{is a binary matrix of data with 0 representing background and 
-  1 representing environment of interest. NA values are acceptable}
+  1 representing environment of interest. NA values are acceptable. The matrix 
+  can be a raster of class 'asc' (adehabitat package), 'RasterLayer' 
+  (raster package) or 'SpatialGridDataFrame' (sp package)}
 }
 
 \value{
-a matrix of the same dim of \item{mat} in which unique components (individual 
-patches) are numbered 1:n with 0 remaining background value.
+a matrix of the same dim and class of \item{mat} in which unique components 
+(individual patches) are numbered 1:n with 0 remaining background value.
 }
 
 \author{Jeremy VanDerWal \email{jjvanderwal@gmail.com}}
