@@ -40,31 +40,40 @@ a data.frame listing
   \item{sd.patch.area}{Standard deviation of patch areas.}
   \item{min.patch.area}{the minimum patch area of the total patch areas. }
   \item{max.patch.area}{the maximum patch area of the total patch areas.}
-  \item{perimeter.area.frac.dim}{perimeter-area fractal dimension equals 2 divided by the slope of regression line obtained by regressing the logarithm of patch area (m2) against the logarithm of patch perimeter (m).}
-  \item{mean.perim.area.ratio}{the mean of the ratio patch perimeter. The perimeter-area ratio equals to the ratio of the patch perimeter (m) to area (m2).}
+  \item{perimeter.area.frac.dim}{perimeter-area fractal dimension equals 2 divided by the slope of regression line obtained 
+                                 by regressing the logarithm of patch area (m2) against the logarithm of patch perimeter (m).}
+  \item{mean.perim.area.ratio}{the mean of the ratio patch perimeter. The perimeter-area ratio equals to the ratio of the 
+                               patch perimeter (m) to area (m2).}
   \item{sd.perim.area.ratio}{standard deviation of the ratio patch perimeter.}
   \item{min.perim.area.ratio}{Minimum perimeter area ratio}
   \item{max.perim.area.ratio}{Maximum perimeter area ratio.}
   \item{mean.shape.index}{ mean of shape index}
   \item{sd.shape.index}{standard deviation of shape index.}
   \item{min.shape.index}{the minimum shape index.}
-  \item{max.shape.index}{...}
-  \item{mean.frac.dim.index}{...}
-  \item{sd.frac.dim.index}{...}
-  \item{min.frac.dim.index}{...}
-  \item{max.frac.dim.index}{...}
-  \item{total.core.area}{...}
-  \item{prop.landscape.core}{...}
-  \item{mean.patch.core.area}{...}
-  \item{sd.patch.core.area}{...}
-  \item{min.patch.core.area}{...}
-  \item{max.patch.core.area}{...}
-  \item{prop.like.adjacencies}{...}
-  \item{aggregation.index}{...}
-  \item{lanscape.division.index}{...}
-  \item{splitting.index}{...}
-  \item{effective.mesh.size}{...}
-  \item{patch.cohesion.index}{...}
+  \item{max.shape.index}{the maximum shape index.}
+  \item{mean.frac.dim.index}{mean of fractal dimension index.}
+  \item{sd.frac.dim.index}{standard deviation of fractal dimension index.}
+  \item{min.frac.dim.index}{the minimum fractal dimension index.}
+  \item{max.frac.dim.index}{the maximum fractal dimension index.}
+  \item{total.core.area}{the sum of the core areas of each patches (m2).}
+  \item{prop.landscape.core}{proportional landscape core}
+  \item{mean.patch.core.area}{mean patch core area.}
+  \item{sd.patch.core.area}{standard deviations patch core area.}
+  \item{min.patch.core.area}{the minimum patch core area.}
+  \item{max.patch.core.area}{the maximum patch core area.}
+  \item{prop.like.adjacencies}{calculated from the adjacency matrix, which shows the frequency with which different pairs 
+                              of patch types (including like adjacencies between the same patch type) appear side-by-side 
+                              on the map (measures the degree of aggregation of patch types).}
+  \item{aggregation.index}{computed simply as an area-weighted mean class aggregation index, where each class is 
+                           weighted by its proportional area in the landscape.}
+  \item{lanscape.division.index}{based on the cumulative patch area distribution and is interpreted as the probability 
+                                 that two randomly chosen pixels in the landscape are not situated in the same patch}
+  \item{splitting.index}{based on the cumulative patch area distribution and is interpreted as the effective mesh number, 
+                         or number of patches with a constant patch size when the landscape is subdivided into S patches, 
+                         where S is the value of the splitting index.}
+  \item{effective.mesh.size}{equals 1 divided by the total landscape area (m2) multiplied by the sum of patch area (m2) 
+                             squared, summed across all patches in the landscape.}
+  \item{patch.cohesion.index}{measures the physical connectedness of the corresponding patch type.}
 }
 
 \author{Jeremy VanDerWal \email{jjvanderwal@gmail.com}}
