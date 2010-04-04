@@ -23,7 +23,7 @@ SigDiff = function(x,y,pattern=TRUE){
 	if (any(class(attrib) %in% 'RasterLayer')) {
 		attrib = setValues(attrib, as.vector(t(t(unclass(out))[nrows:1,]))); return(attrib)
 	} else if (any(class(attrib) == 'SpatialGridDataFrame')) {
-		attrib@data[1] = as.vector(unclass(out)[,dim(out)[2]:1]; return(attrib)
+		attrib@data[1] = as.vector(unclass(out)[,dim(out)[2]:1]); return(attrib)
 	} else {
 		attributes(out) = attrib; return(out)
 	}
