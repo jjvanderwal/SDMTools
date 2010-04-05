@@ -1,13 +1,16 @@
+2010-04-05 jjvanderwal
+- added point in polygon function
+
 2010-03-31 jjvanderwal
 - added functionality to permit use of raster information from raster and sp packages
-
-2010-02-22 jjvanderwal
-- added functions of ConnCompLabel, PatchStats and ClassStat
-- corrected read.asc.gz
-- uploaded work to new R-forge project website
 
 2010-03-11 jjvanderwal
 - corrected read.asc.R to read in xll & yll as midpoints of cells NOT ll corner
 - Updated read.asc & write.asc to include a toggle for gzip compression
 - made read.asc.gz & write.asc.gz simple wrapping scripts for the new read.asc & write.asc
 - simplified extract.data
+
+2010-02-22 jjvanderwal
+- added functions of ConnCompLabel, PatchStats and ClassStat
+- corrected read.asc.gz
+- uploaded work to new R-forge project website
