@@ -13,7 +13,7 @@ R/asc.from.raster.R -text
 R/compare.matrix.R -text
 R/extract.data.R -text
 R/lcmw.R -text
-R/point.in.polygon.R -text
+R/pnt.in.poly.R -text
 R/read.asc.R -text
 R/write.asc.R -text
 man/ClassStat.Rd -text
@@ -27,9 +27,10 @@ man/asc.from.raster.Rd -text
 man/compare.matrix.Rd -text
 man/extract.data.Rd -text
 man/lcmw.Rd -text
-man/point.in.polygon.Rd -text
+man/pnt.in.poly.Rd -text
 man/read.asc.Rd -text
 src/PS.c -text
 src/ccl.c -text
 src/getmin.c -text
 src/movewindow.c -text
+src/pip.c -text

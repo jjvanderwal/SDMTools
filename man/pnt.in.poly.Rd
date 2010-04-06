@@ -1,11 +1,11 @@
-\name{point.in.polygon}
+\name{pnt.in.poly}
 \Rdversion{1.1}
-\alias{point.in.polygon}
+\alias{pnt.in.poly}
 
 \title{ Point in Polygon }
 
 \description{
-\code{point.in.polygon} works out if 2D points lie within the boundaries of 
+\code{pnt.in.poly} works out if 2D points lie within the boundaries of 
 a defined polygon. 
 
 Points that lie on the boundaries of the polygon or vertices are assumed to be 
@@ -13,7 +13,7 @@ within the polygon.
 }
 
 \usage{
-point.in.polygon(pnts,poly.pnts)
+pnt.in.poly(pnts,poly.pnts)
 }
 
 \arguments{
@@ -54,7 +54,7 @@ plot(rbind(polypnts, pnts))
 polygon(polypnts,col='#99999990')
 
 #create check which points fall within the polygon
-out = point.in.polygon(pnts,polypnts)
+out = pnt.in.poly(pnts,polypnts)
 head(out)
 
 #identify points not in the polygon with an X

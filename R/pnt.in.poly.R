@@ -1,4 +1,4 @@
-point.in.polygon <- function(pnts,poly.pnts)	
+pnt.in.poly <- function(pnts,poly.pnts)	
 {
 	#check if pnts & poly is 2 column matrix or dataframe
 	pnts = as.matrix(pnts); poly.pnts = as.matrix(poly.pnts)
