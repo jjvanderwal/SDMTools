@@ -23,7 +23,7 @@ ConnCompLabel(mat)
 }
 
 \value{
-a matrix of the same dim and class of \item{mat} in which unique components 
+a matrix of the same dim and class of \code{mat} in which unique components 
 (individual patches) are numbered 1:n with 0 remaining background value.
 }
 
