@@ -11,6 +11,7 @@ R/Scalebar.R -text
 R/SigDiff.R -text
 R/ZonalStat.R -text
 R/asc.from.raster.R -text
+R/auc.R -text
 R/compare.matrix.R -text
 R/extract.data.R -text
 R/lcmw.R -text
@@ -28,6 +29,7 @@ man/Scalebar.Rd -text
 man/SigDiff.Rd -text
 man/ZonalStat.Rd -text
 man/asc.from.raster.Rd -text
+man/auc.Rd -text
 man/compare.matrix.Rd -text
 man/extract.data.Rd -text
 man/lcmw.Rd -text
