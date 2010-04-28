@@ -14,7 +14,9 @@ R/asc.from.raster.R -text
 R/compare.matrix.R -text
 R/extract.data.R -text
 R/lcmw.R -text
+R/legend.gradient.r -text
 R/pnt.in.poly.R -text
+R/quick.map.r -text
 R/read.asc.R -text
 R/write.asc.R -text
 man/ClassStat.Rd -text
@@ -29,7 +31,9 @@ man/asc.from.raster.Rd -text
 man/compare.matrix.Rd -text
 man/extract.data.Rd -text
 man/lcmw.Rd -text
+man/legend.gradient.rd -text
 man/pnt.in.poly.Rd -text
+man/quick.map.rd -text
 man/read.asc.Rd -text
 src/PS.c -text
 src/ccl.c -text
