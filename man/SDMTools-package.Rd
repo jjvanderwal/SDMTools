@@ -1,5 +1,4 @@
 \name{SDMTools-package}
-\Rdversion{1.1}
 \alias{SDMTools-package}
 \alias{SDMTools}
 \docType{package}
@@ -14,7 +13,7 @@ modelling.
 \tabular{ll}{
 Package: \tab SDMTools\cr
 Type: \tab Package\cr
-Version: \tab 1.0.2\cr
+Version: \tab 1.1\cr
 Date: \tab 2009-11-20\cr
 License: \tab GPL version 2 or newer\cr
 LazyLoad: \tab yes\cr

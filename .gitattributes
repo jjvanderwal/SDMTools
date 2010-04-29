@@ -1,5 +1,4 @@
 * text=auto !eol
-/ChangeLog -text
 /DESCRIPTION -text
 /NAMESPACE -text
 R/ClassStat.R -text
