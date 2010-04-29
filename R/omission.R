@@ -4,11 +4,11 @@
 
 #NAs are automatically removed
 
-ommission <- function(mat){
+omission <- function(mat){
 	#input checks
 	if (attr(mat,'class')!='confusion.matrix') stop('mat must be of class confusion.matrix')
 	#return the value
-	return(mat[1,2]/sum(mat))
+	return(mat[1,2]/sum(mat[,2]))
 }
 
 sensitivity = function(mat) { 

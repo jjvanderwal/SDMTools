@@ -9,7 +9,7 @@
 Note: this method will exclude any missing data
 }
 \usage{
-auc(abs,pred)
+auc(obs,pred)
 }
 
 \arguments{

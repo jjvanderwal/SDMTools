@@ -1,4 +1,4 @@
-#function to calculate 5 measures of accuracy for presence/absence or presence/psuedo-absence data
+#function to calculate 6 measures of accuracy for presence/absence or presence/psuedo-absence data
 
 #obs is the observed values ... 0 for absence & 1 for presence
 #pred are predicted probabilities from 0 to 1
@@ -33,10 +33,29 @@ accuracy <- function(obs,pred,threshold=0.5){
 	} else { stop('inappropriate threshold values used as input. See help file.') }
 	
 	#cycle through each of the helpfiles
-	out = NULL
-	for (threshold in thresholds) {
-		
+	out = data.frame(threshold=as.double(thresholds),AUC=NA,omission.rate=NA,sensitivity=NA,
+		specificity=NA,prop.correct=NA,Kappa=NA)
+	for (ii in 1:length(thresholds)) {
+		threshold = thresholds[ii]
+		#convert preditions to binary based on threshold
+		bin.pred = pred;
+		if (threshold==0) {
+			bin.pred[which(bin.pred>threshold)] = 1; bin.pred[which(bin.pred<=threshold)] = 0
+		} else {
+			bin.pred[which(bin.pred>=threshold)] = 1; bin.pred[which(bin.pred<threshold)] = 0
+		}
+		#create the confusion matrix ...just like using confusion.matrix command
+		mat = table(bin.pred=factor(bin.pred,levels=c(0,1)),obs=factor(obs,levels=c(0,1)))
+		attr(mat,'class') = 'confusion.matrix'
+		#sppend data to output dataframe
+		out$AUC[ii] = auc(obs,bin.pred)
+		out$omission.rate[ii] = omission(mat)
+		out$sensitivity[ii] = sensitivity(mat)
+		out$specificity[ii] = specificity(mat)
+		out$prop.correct[ii] = prop.correct(mat)
+		out$Kappa[ii] = Kappa(mat)
 	}
-
+	#return the output data
+	return(out)
 }
 
