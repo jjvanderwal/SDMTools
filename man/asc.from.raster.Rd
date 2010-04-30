@@ -1,5 +1,4 @@
 \name{asc.from.raster}
-\Rdversion{1.1}
 \alias{asc.from.raster}
 \alias{raster.from.asc}
 \alias{asc.from.sp}

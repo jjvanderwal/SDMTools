@@ -1,5 +1,4 @@
 \name{confusion.matrix}
-\Rdversion{1.1}
 \alias{confusion.matrix}
 
 \title{ Confusion Matrix }
@@ -9,7 +8,7 @@
 Note: this method will exclude any missing data
 }
 \usage{
-confusion.matrix(abs,pred,threshold=0.5)
+confusion.matrix(obs,pred,threshold=0.5)
 }
 
 \arguments{
@@ -26,7 +25,7 @@ of true & false presences and absences.
 \examples{
 
 #create some data
-obs = c(sample(c(0,1),20,replace=T),NA); obs = obs[order(obs)]
+obs = c(sample(c(0,1),20,replace=TRUE),NA); obs = obs[order(obs)]
 pred = runif(length(obs),0,1); pred = pred[order(pred)]
 
 #calculate the confusion matrix

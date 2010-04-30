@@ -1,5 +1,4 @@
 \name{Istat}
-\Rdversion{1.1}
 \alias{Istat}
 
 \title{ I Similarity Statistic for Quantifying Niche Overlap }

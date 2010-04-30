@@ -1,5 +1,4 @@
 \name{Scalebar}
-\Rdversion{1.1}
 \alias{Scalebar}
 
 \title{ Scalebar for Projected Maps }

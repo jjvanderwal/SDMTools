@@ -1,5 +1,4 @@
 \name{legend.gradient}
-\Rdversion{1.1}
 \alias{legend.gradient}
 
 \title{ Legend Gradient }
@@ -36,13 +35,14 @@ nothing is returned, a gradient legend is added to a plot or a image.
 tmat = { matrix(c(	0,0,0,1,0,0,1,1,0,1,
                     0,0,1,0,1,0,0,0,0,0,
                     0,1,NA,1,0,1,0,0,0,1,
-					          1,0,1,1,1,0,1,0,0,1,
-				            0,1,0,1,0,1,0,0,0,1,
-					          0,0,1,0,1,0,0,1,1,0,
-					          1,0,0,1,0,0,1,0,0,0,
-				            0,1,0,0,0,1,0,NA,NA,NA,
-					          0,0,1,1,1,0,0,NA,NA,NA,
-				            1,1,1,0,0,0,0,NA,NA,NA),nr=10,byrow=T) }
+					1,0,1,1,1,0,1,0,0,1,
+					0,1,0,1,0,1,0,0,0,1,
+					0,0,1,0,1,0,0,1,1,0,
+					1,0,0,1,0,0,1,0,0,0,
+					0,1,0,0,0,1,0,NA,NA,NA,
+					0,0,1,1,1,0,0,NA,NA,NA,
+					1,1,1,0,0,0,0,NA,NA,NA),nr=10,byrow=TRUE) }
+							
 #do the connected component labeling
 tasc = ConnCompLabel(tmat)
 
@@ -50,7 +50,7 @@ tasc = ConnCompLabel(tmat)
 colormap=c("grey","yellow","yellowgreen","olivedrab1","lightblue4")
                                                                   
 #create an image
-image(tasc,col=colormap, axes=F, xlab="", ylab="", ann=FALSE)
+image(tasc,col=colormap, axes=FALSE, xlab="", ylab="", ann=FALSE)
 
 #points for the gradient legend
 pnts = cbind(x =c(0.8,0.9,0.9,0.8), y =c(1.0,1.0,0.8,0.8))

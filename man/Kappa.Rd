@@ -19,7 +19,7 @@ returns a single value represting the Kappa statistic.
 \examples{
 
 #create some data
-obs = c(sample(c(0,1),20,replace=T),NA); obs = obs[order(obs)]
+obs = c(sample(c(0,1),20,replace=TRUE),NA); obs = obs[order(obs)]
 pred = runif(length(obs),0,1); pred = pred[order(pred)]
 
 #calculate the confusion matrix

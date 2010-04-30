@@ -1,6 +1,6 @@
 \name{lcmw}
-\Rdversion{1.1}
 \alias{lcmw}
+
 \title{ Least Cost Moving Windows Calculation }
 
 \description{

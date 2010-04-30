@@ -1,5 +1,4 @@
 \name{PatchStat}
-\Rdversion{1.1}
 \alias{PatchStat}
 
 \title{ Landscape Patch Statistics }
@@ -57,11 +56,13 @@ tmat = { matrix(c(	0,0,0,1,0,0,1,1,0,1,
 					1,0,0,1,0,0,1,0,0,1,
 					0,1,0,0,0,1,0,0,0,1,
 					0,0,1,1,1,0,0,0,0,1,
-					1,1,1,0,0,0,0,0,0,1),nr=10,byrow=T) }
+					1,1,1,0,0,0,0,0,0,1),nr=10,byrow=TRUE) }
+					
 #do the connected component labelling
 ccl.mat = ConnCompLabel(tmat)
 ccl.mat
 image(t(ccl.mat[10:1,]),col=c('grey',rainbow(length(unique(ccl.mat))-1)))
+
 #calculate the patch statistics
 ps.data = PatchStat(ccl.mat)
 ps.data

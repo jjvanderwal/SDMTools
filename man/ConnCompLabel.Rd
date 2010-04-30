@@ -1,5 +1,4 @@
 \name{ConnCompLabel}
-\Rdversion{1.1}
 \alias{ConnCompLabel}
 
 \title{ Connected components labelling }
@@ -47,7 +46,8 @@ tmat = { matrix(c(	0,0,0,1,0,0,1,1,0,1,
 					1,0,0,1,0,0,1,0,0,1,
 					0,1,0,0,0,1,0,0,0,1,
 					0,0,1,1,1,0,0,0,0,1,
-					1,1,1,0,0,0,0,0,0,1),nr=10,byrow=T) }
+					1,1,1,0,0,0,0,0,0,1),nr=10,byrow=TRUE) }
+					
 #do the connected component labelling
 ccl.mat = ConnCompLabel(tmat)
 ccl.mat

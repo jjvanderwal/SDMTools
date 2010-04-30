@@ -1,5 +1,4 @@
 \name{pnt.in.poly}
-\Rdversion{1.1}
 \alias{pnt.in.poly}
 
 \title{ Point in Polygon }

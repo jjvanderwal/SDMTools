@@ -17,7 +17,7 @@ raster.from.asc = function(x,projs=NA) {
 	ymin = attr(x, "yll") - 0.5 * cellsize
 	xmax = xmin + ncols*cellsize
 	ymax = ymin + nrows*cellsize
-	r <- raster(ncols=ncols, nrows=nrows, projs=projs, xmn=xmin, xmx=xmax, ymn=ymin, ymx=ymax)
+	r <- raster(ncols=ncols, nrows=nrows, crs=projs, xmn=xmin, xmx=xmax, ymn=ymin, ymx=ymax)
 	tvals = as.vector(t(t(unclass(x))[nrows:1,])); tvals[which(is.na(tvals))] = r@file@nodatavalue
 	r <- setValues(r, as.vector(t(t(unclass(x))[nrows:1,])))
 	return(r)

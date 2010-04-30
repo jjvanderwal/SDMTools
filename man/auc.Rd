@@ -1,5 +1,4 @@
 \name{auc}
-\Rdversion{1.1}
 \alias{auc}
 
 \title{ Area Under the Curve of the Reciever Operating Curve }
@@ -24,7 +23,7 @@ returns a single value represting the AUC value.
 \examples{
 
 #create some data
-obs = c(sample(c(0,1),20,replace=T),NA)
+obs = c(sample(c(0,1),20,replace=TRUE),NA)
 pred = runif(length(obs),0,1)
 
 #calculate AUC from the random data

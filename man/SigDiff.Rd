@@ -1,5 +1,4 @@
 \name{SigDiff}
-\Rdversion{1.1}
 \alias{SigDiff}
 \alias{ImageDiff}
 

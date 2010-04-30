@@ -1,5 +1,4 @@
 \name{compare.matrix}
-\Rdversion{1.1}
 \alias{compare.matrix}
 
 \title{ Biplot Comparison of Matrices }

@@ -1,5 +1,4 @@
 \name{extract.data}
-\Rdversion{1.1}
 \alias{extract.data}
 
 \title{ Spatial Join of Points with Raster Grids }

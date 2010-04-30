@@ -1,5 +1,4 @@
 \name{ZonalStat}
-\Rdversion{1.1}
 \alias{ZonalStat}
 
 \title{ Landscape Zonal Statistics }
@@ -11,7 +10,7 @@ matrices of data. The matrix can be a raster of class 'asc' (adehabitat package)
 }
 
 \usage{
-PatchStat(mat,zone,FUN='all')
+ZonalStat(mat,zones,FUN='all')
 }
 \arguments{
   \item{mat}{a matrix of data some data to be summarized; The matrix can be a raster 
@@ -56,7 +55,8 @@ tmat = { matrix(c(	0,0,0,1,0,0,1,1,0,1,
 					1,0,0,1,0,0,1,0,0,1,
 					0,1,0,0,0,1,0,0,0,1,
 					0,0,1,1,1,0,0,0,0,1,
-					1,1,1,0,0,0,0,0,0,1),nr=10,byrow=T) }
+					1,1,1,0,0,0,0,0,0,1),nr=10,byrow=TRUE) }
+					
 #do the connected component labelling
 ccl.mat = ConnCompLabel(tmat)
 ccl.mat #this is the zone matrix to be used

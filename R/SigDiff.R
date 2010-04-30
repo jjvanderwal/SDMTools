@@ -1,13 +1,13 @@
 SigDiff = function(x,y,pattern=TRUE){
 	#check input for class for returning info
-	if (class(mat) == 'asc') { 
-		attrib = attributes(mat)
-	} else if (any(class(mat) %in% 'RasterLayer')) {
-		attrib = mat; mat = asc.from.raster(mat)
-	} else if (any(class(mat) == 'SpatialGridDataFrame')) {
-		attrib = mat; mat = asc.from.sp(mat)
+	if (class(x) == 'asc') { 
+		attrib = attributes(x)
+	} else if (any(class(x) %in% 'RasterLayer')) {
+		attrib = x; x = asc.from.raster(x); y = asc.from.raster(y)
+	} else if (any(class(x) == 'SpatialGridDataFrame')) {
+		attrib = x; x = asc.from.sp(x); y = asc.from.sp(y)
 	} else {
-		attrib = attributes(mat)
+		attrib = attributes(x)
 	}
 	
 	if(length(which(dim(x)==dim(y)))!=2) stop('asc objects must be of the same extent')#confirm same extents
@@ -21,7 +21,7 @@ SigDiff = function(x,y,pattern=TRUE){
 	
 	#reset the attributes of the input
 	if (any(class(attrib) %in% 'RasterLayer')) {
-		attrib = setValues(attrib, as.vector(t(t(unclass(out))[nrows:1,]))); return(attrib)
+		attrib = setValues(attrib, as.vector(t(t(unclass(out))[dim(out)[2]:1,]))); return(attrib)
 	} else if (any(class(attrib) == 'SpatialGridDataFrame')) {
 		attrib@data[1] = as.vector(unclass(out)[,dim(out)[2]:1]); return(attrib)
 	} else {

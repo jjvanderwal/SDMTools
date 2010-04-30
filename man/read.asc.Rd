@@ -1,5 +1,4 @@
 \name{read.asc}
-\Rdversion{1.1}
 \alias{read.asc}
 \alias{read.asc.gz}
 \alias{write.asc}

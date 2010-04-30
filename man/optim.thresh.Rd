@@ -8,7 +8,7 @@
 Note: this method will exclude any missing data
 }
 \usage{
-optim.thresh(abs,pred,threshold)
+optim.thresh(obs,pred,threshold)
 }
 
 \arguments{
@@ -16,8 +16,9 @@ optim.thresh(abs,pred,threshold)
   \item{pred}{a vector of the same length as \code{obs} representing the predicted values.
   Values must be between 0 & 1 prepresenting a likelihood.}
   \item{threshold}{a single integer value representing the number of equal interval 
-  threshold values between 0 & 1
+  threshold values between 0 & 1}
 }
+
 \value{
 returns a list of the optimal thresholds for the different methods. If the list item 
 is a single value, that is the optimal threshold but if two values are reported for the method,
@@ -31,7 +32,7 @@ following methods:
   \item{mean.occurence.prediction}{is the mean prediction for the occurrence 
   (presence) records}
   \item{'10.percent.omission'}{is the threshold value or range in values that 
-  excludes approx. 10% of the occurrence records} 
+  excludes approx. 10 percent of the occurrence records} 
   \item{'sensitivity=specificity'}{is the threshold value or range in values where 
   sensitivity is equal to sensitivity} 
   \item{'max.sensitivity+specificity'}{is the threshold value or range in values that
@@ -44,11 +45,12 @@ following methods:
   ROC curve is closest to point (0,1) (or perfect fit)} 
   
 }
+
 \author{Jeremy VanDerWal \email{jjvanderwal@gmail.com}}
 \examples{
 
 #create some data
-obs = c(sample(c(0,1),20,replace=T),NA); obs = obs[order(obs)]
+obs = c(sample(c(0,1),20,replace=TRUE),NA); obs = obs[order(obs)]
 pred = runif(length(obs),0,1); pred = pred[order(pred)]
 
 #calculate the optimal thresholds

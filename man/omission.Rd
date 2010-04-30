@@ -1,5 +1,4 @@
 \name{omission}
-\Rdversion{1.1}
 \alias{omission}
 \alias{sensitivity}
 \alias{specificity}
@@ -25,14 +24,14 @@ returns single values representing the:
    given the defined threshold value}
   \item{sensitivity}{the sensitivity given the defined threshold value}
   \item{specificity}{the specificity given the defined threshold value}
-  \item{prop.correct){the proportion of the presence and absence records correctly 
+  \item{prop.correct}{the proportion of the presence and absence records correctly 
   identified given the defined threshold value}
 }
 \author{Jeremy VanDerWal \email{jjvanderwal@gmail.com}}
 \examples{
 
 #create some data
-obs = c(sample(c(0,1),20,replace=T),NA); obs = obs[order(obs)]
+obs = c(sample(c(0,1),20,replace=TRUE),NA); obs = obs[order(obs)]
 pred = runif(length(obs),0,1); pred = pred[order(pred)]
 
 #calculate the confusion matrix

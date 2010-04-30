@@ -1,5 +1,4 @@
 \name{accuracy}
-\Rdversion{1.1}
 \alias{accuracy}
 
 \title{ Measures of Model Accuracy }
@@ -31,7 +30,7 @@ a data.frame of with seven columns:
    given the defined threshold value}
   \item{sensitivity}{the sensitivity given the defined threshold value}
   \item{specificity}{the specificity given the defined threshold value}
-  \item{prop.correct){the proportion of the presence and absence records correctly 
+  \item{prop.correct}{the proportion of the presence and absence records correctly 
   identified given the defined threshold value}
   \item{Kappa}{the Kappa statistic of the model given the defined threshold value}
 }
@@ -39,7 +38,7 @@ a data.frame of with seven columns:
 \examples{
 
 #create some data
-obs = c(sample(c(0,1),20,replace=T),NA); obs = obs[order(obs)]
+obs = c(sample(c(0,1),20,replace=TRUE),NA); obs = obs[order(obs)]
 pred = runif(length(obs),0,1); pred = pred[order(pred)]
 
 #calculate accuracy of the model with a single threshold value
