@@ -3,33 +3,19 @@
 
 \title{ Landscape Zonal Statistics }
 
-\description{
-\code{ZonalStat} calculates the statistics of data for specified zones of two 
-matrices of data. The matrix can be a raster of class 'asc' (adehabitat package), 
-'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package).
-}
+\description{ \code{ZonalStat} calculates the statistics of data for specified zones of two matrices of data. The matrix can be a raster of class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package). }
 
-\usage{
-ZonalStat(mat,zones,FUN='all')
-}
+\usage{ ZonalStat(mat,zones,FUN='all') }
+
 \arguments{
-  \item{mat}{a matrix of data some data to be summarized; The matrix can be a raster 
-  of class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 
-  'SpatialGridDataFrame' (sp package)}
-  \item{zones}{a matrix of data with individual patches identified as with \code{ConnCompLabel};
-  The matrix must be of the same size & extent as \code{mat}}
-  \item{FUN}{a single or vector of functions to be applied to each 'zone'; the default
-  of 'all' will calculate min, 1st quarter, median, 3rd quarter, max, mean, 
-  standard deviation and n}
+  \item{mat}{a matrix of data to be summarized; The matrix can be a raster of class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)}
+  \item{zones}{a matrix of data with individual patches identified as with \code{ConnCompLabel}; The matrix must be of the same size & extent as \code{mat}}
+  \item{FUN}{a single or vector of functions to be applied to each 'zone'; the default of 'all' will calculate min, 1st quarter, median, 3rd quarter, max, mean, standard deviation and n}
 }
 
 \details{
-The code summarized the data for defined zones. Nearly any function can be used for
-summarizing the data. 
-
-The FUN defined with 'all' as one of or the only function will append the functions
-of min, 1st quarter, median, 3rd quarter, max, mean, standard deviation and n 
-to what is being calculated.
+The code summarizes the data for defined zones. Nearly any function can be used for summarizing the data. \cr \cr 
+The FUN defined with 'all' as one of or the only function will append the functions of min, 1st quarter, median, 3rd quarter, max, mean, standard deviation and n to what is being calculated.
 }
 
 \value{
@@ -46,16 +32,16 @@ excluded from the analysis.
 \examples{
 
 #define a simple binary matrix
-tmat = { matrix(c(	0,0,0,1,0,0,1,1,0,1,
-					0,0,1,0,1,0,0,0,0,0,
-					0,1,NA,1,0,1,0,0,0,1,
-					1,0,1,1,1,0,1,0,0,1,
-					0,1,0,1,0,1,0,0,0,1,
-					0,0,1,0,1,0,0,1,1,0,
-					1,0,0,1,0,0,1,0,0,1,
-					0,1,0,0,0,1,0,0,0,1,
-					0,0,1,1,1,0,0,0,0,1,
-					1,1,1,0,0,0,0,0,0,1),nr=10,byrow=TRUE) }
+tmat = { matrix(c( 0,0,0,1,0,0,1,1,0,1,
+                   0,0,1,0,1,0,0,0,0,0,
+                   0,1,NA,1,0,1,0,0,0,1,
+                   1,0,1,1,1,0,1,0,0,1,
+                   0,1,0,1,0,1,0,0,0,1,
+                   0,0,1,0,1,0,0,1,1,0,
+                   1,0,0,1,0,0,1,0,0,1,
+                   0,1,0,0,0,1,0,0,0,1,
+                   0,0,1,1,1,0,0,0,0,1,
+                   1,1,1,0,0,0,0,0,0,1),nr=10,byrow=TRUE) }
 					
 #do the connected component labelling
 ccl.mat = ConnCompLabel(tmat)
@@ -74,7 +60,8 @@ zs.data = ZonalStat(data.mat,ccl.mat,FUN='sum')
 zs.data
 
 #calculate sum & n & 'all' and show when a function is not defined
-zs.data = ZonalStat(data.mat,ccl.mat,FUN=c('sum','length','not.a.function','all'))
+zs.data = ZonalStat(data.mat,ccl.mat,
+    FUN=c('sum','length','not.a.function','all'))
 zs.data
 attr(zs.data,'excluded NAs') #show how many NAs were omitted from analysis
 

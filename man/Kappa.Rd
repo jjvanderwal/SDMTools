@@ -2,20 +2,19 @@
 \alias{Kappa}
 
 \title{ Kappa Statistic }
-\description{
-\code{Kappa} estimates the Kappa statistic for model accuracy.
-}
-\usage{
-Kappa(mat)
-}
 
-\arguments{
-  \item{mat}{a confusion matrix of class 'confusion.matrix' from \code{confusion.matrix}}
-}
-\value{
-returns a single value represting the Kappa statistic.
-}
+\description{ \code{Kappa} estimates the Kappa statistic for model accuracy. }
+
+\usage{ Kappa(mat) }
+
+\arguments{ \item{mat}{a confusion matrix of class 'confusion.matrix' from \code{confusion.matrix}} }
+
+\value{ Returns a single value represting the Kappa statistic. }
+
 \author{Jeremy VanDerWal \email{jjvanderwal@gmail.com}}
+
+\seealso{ \code{\link{auc}}, \code{\link{omission}}, \code{\link{sensitivity}}, \code{\link{specificity}}, \code{\link{prop.correct}}, \code{\link{confusion.matrix}}, \code{\link{accuracy}} }
+
 \examples{
 
 #create some data

@@ -4,42 +4,24 @@
 \title{ I Similarity Statistic for Quantifying Niche Overlap }
 
 \description{
-\code{Istat} computes the I similarity statistic of Warren et al. 2009. It is a
-method for defining niche overlap from predictions of species' distributions.
-
-\bold{NOTE:} it is assumed the input data are of the same extent and cellsize, 
-and all values are positive.
+	\code{Istat} computes the I similarity statistic of Warren et al. 2009. It is a method for defining niche overlap from predictions of species' distributions. \cr \cr
+	\bold{NOTE:} it is assumed the input data are of the same extent and cellsize, and all values are positive.
 }
 
-\usage{
-Istat(x,y)
-}
+\usage{ Istat(x,y) }
 
 \arguments{
-  \item{x}{a vector or matrix of data; the matrix can be a raster of class 'asc' 
-  (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' 
-  (sp package)}
-  \item{y}{a vector or matrix of data with the same dimensions and class of 'x'}
+	\item{x}{a vector or matrix of data; the matrix can be a raster of class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)}
+	\item{y}{a vector or matrix of data with the same dimensions and class of 'x'}
 }
 
-\details{
-The I similarity statistic sums the pair-wise differences between two predictions 
-to create a single value representing the similarity of the two distributions. 
-The I similarity statistic ranges from a value of 0, where two distributions have 
-no overlap, to 1 where two distributions are identical (Warren et al., 2008).
-}
+\details{ The I similarity statistic sums the pair-wise differences between two predictions to create a single value representing the similarity of the two distributions. The I similarity statistic ranges from a value of 0, where two distributions have no overlap, to 1 where two distributions are identical (Warren et al., 2008). }
 
-\value{
-a single value that is the I similarity statistic
-}
+\value{ A single value that is the I similarity statistic }
 
-\author{Jeremy VanDerWal \email{jjvanderwal@gmail.com}}
+\author{ Jeremy VanDerWal \email{jjvanderwal@gmail.com} }
 
-\references{
-Warren, D. L., R. E. Glor, M. Turelli, and D. Funk. 2009. Environmental Niche 
-Equivalency versus Conservatism: Quantitative Approaches to Niche Evolution. 
-Evolution 62:2868-2883.
-}
+\references{ Warren, D. L., R. E. Glor, M. Turelli, and D. Funk. 2009. Environmental Niche Equivalency versus Conservatism: Quantitative Approaches to Niche Evolution. Evolution 62:2868-2883. }
 
 \examples{
 

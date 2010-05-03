@@ -1,6 +1,10 @@
 # CREATE A FUNCTION FOR MAP COLORS
 
 quick.map= function(sdm.asc, threshold, bkgd.col = 'grey',cols=heat.colors(100), zlim=NULL, pnts=NULL, ...){
+	#check if raster from sp or raster package and convert if necessary
+	if (any(class(sdm.asc) %in% 'RasterLayer')) sdm.asc = asc.from.raster(sdm.asc)
+	if (any(class(sdm.asc) == 'SpatialGridDataFrame')) sdm.asc = asc.from.sp(sdm.asc)
+
 	#get range of data
 	trange=range(sdm.asc,na.rm=T)
 	#make sure threshold is within range

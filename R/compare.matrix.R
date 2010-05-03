@@ -14,19 +14,17 @@ function(x,y,nbins,...){
 	#create the bin classes
 	bins = seq(tt[1],tt[2],(tt[2]-tt[1])/nbins)
 	mids = bins[1:(length(bins)-1)] + 0.5 * mean(diff(bins))
-	#reclass the data into bins
-	for (i in 1:length(mids)){
-		tdata$x[which(tdata$x>=bins[i] & tdata$x<bins[i+1])] = mids[i]
-		tdata$y[which(tdata$y>=bins[i] & tdata$y<bins[i+1])] = mids[i]
-	}
+	tdata$xbin = cut(tdata$x,breaks=bins,labels=mids,include.lowest=T,right=T)
+	tdata$ybin = cut(tdata$y,breaks=bins,labels=mids,include.lowest=T,right=T)
 	#get frequencies (counts) of data combinations
-	aggdata=aggregate(x=tdata$x, by=list(x=tdata$x, y=tdata$y), FUN=length)
+	aggdata=aggregate(x=tdata$x, by=list(x=tdata$xbin, y=tdata$ybin), FUN=length)
 	#create a data frame of all possible combinations of data within range
 	tasc.p=expand.grid(x=mids, y=mids)  
 	#merge tasc.p with aggdata
 	mdata=merge(x=tasc.p, y=aggdata, all=TRUE)
+	names(mdata)[3] = 'out'
 	#convert to a matrix
-	mdata <- matrix(mdata$x, nrow = length(mids), ncol=length(mids), byrow=TRUE)
+	mdata <- matrix(mdata$out, nrow = length(mids), ncol=length(mids), byrow=TRUE)
 	#create an image
 	suppressWarnings(image(x=mids, y=mids, z=mdata, col=c(heat.colors(10)[10:1]),...))
 	#overlay contours

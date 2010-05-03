@@ -3,30 +3,22 @@
 
 \title{ Scalebar for Projected Maps }
 
-\description{
-\code{Scalebar} adds a distance scalebar onto a projected map. It is not 
-appropriate for geographic projections.
-}
+\description{ \code{Scalebar} adds a distance scalebar onto a projected map. It is not appropriate for geographic projections. }
 
-\usage{
-Scalebar(x,y,distance,unit='km',scale=1,t.cex=0.8)
-}
+\usage{ Scalebar(x,y,distance,unit='km',scale=1,t.cex=0.8) }
+
 \arguments{
-  \item{x}{the x-axis position for the lower left corner of the bar}
-  \item{y}{the x-axis position for the lower left corner of the bar}
-  \item{distance}{the distance for which the scale bar should represent}
-  \item{unit}{the units to report as the scaling}
-  \item{scale}{the scaling factor to rescale the distance to a different unit. 
-  e.g., if your map is in m and want the scalebar to be in km, use a scale 
-  of 0.01}
-  \item{t.cex}{the scaling of the font size to be used for the scalebar}
+	\item{x}{the x-axis position for the lower left corner of the bar}
+	\item{y}{the x-axis position for the lower left corner of the bar}
+	\item{distance}{the distance for which the scale bar should represent}
+	\item{unit}{the units to report as the scaling}
+	\item{scale}{the scaling factor to rescale the distance to a different unit. e.g., if your map is in m and want the scalebar to be in km, use a scale of 0.01}
+	\item{t.cex}{the scaling of the font size to be used for the scalebar}
 }
 
-\value{
-nothing is returned, simply a scalebar is added to a plot.
-}
+\value{ nothing is returned, simply a scalebar is added to a plot. }
 
-\author{Jeremy VanDerWal \email{jjvanderwal@gmail.com}}
+\author{ Jeremy VanDerWal \email{jjvanderwal@gmail.com} }
 
 \examples{
 

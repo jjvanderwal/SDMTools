@@ -5,15 +5,12 @@
 \alias{write.asc.gz}
 
 \title{ESRI ASCII Raster File Import And Export}
-\description{\code{read.asc} and \code{read.asc.gz} reads ESRI ArcInfo ASCII raster file 
-either uncompressed or compressed using gzip.
-
-\code{write.asc} and \code{write.asc.gz} writes an asc object to a ESRI 
-ArcInfo ASCII raster file. The output can be either compressed or uncompressed.
-
-These functions are faster methods based on the adehabitat import.asc and 
-export.asc.
+\description{
+	\code{read.asc} and \code{read.asc.gz} reads ESRI ArcInfo ASCII raster file either uncompressed or compressed using gzip. \cr \cr
+	\code{write.asc} and \code{write.asc.gz} writes an asc object to a ESRI ArcInfo ASCII raster file. The output can be either compressed or uncompressed. \cr \cr
+	These functions are faster methods based on the adehabitat import.asc and export.asc.
 }
+
 \usage{
 read.asc(file,gz=FALSE)
 read.asc.gz(file)
@@ -22,25 +19,24 @@ write.asc.gz(x,file)
 }
 
 \arguments{
-  \item{file}{a character string representing the filename of the input/output 
-file. The file extension should always be '.asc'.}
-  \item{gz}{defines if the object is or should be compressed using gzip}
-  \item{x}{an object of class 'asc' as defined in the adehabitat package}
+	\item{file}{a character string representing the filename of the input/output file. The file extension should always be '.asc'.}
+	\item{gz}{defines if the object is or should be compressed using gzip}
+	\item{x}{an object of class 'asc' as defined in the adehabitat package}
 }
-\details{
-Implements a faster version of import.asc or export.asc from the adehabitat 
-package. In addition, files can be read in and written to in gzip compressed format.
-}
+
+\details{ Implements a faster version of import.asc or export.asc from the adehabitat package. In addition, files can be read in and written to in gzip compressed format. }
+
 \value{
-Returns a raster matrix of the class 'asc' defined in the adehabitat package 
-with the following attributes:
-  \item{xll}{the x coordinate of the center of the lower left pixel of the map}
-  \item{yll}{the y coordinate of the center of the lower left pixel of the map}
-  \item{cellsize}{the size of a pixel on the studied map}
-  \item{type}{either 'numeric' or 'factor'}
-  \item{levels}{if type = 'factor', the levels of the factor.}
+	Returns a raster matrix of the class 'asc' defined in the adehabitat package with the following attributes:
+		\item{xll}{the x coordinate of the center of the lower left pixel of the map}
+		\item{yll}{the y coordinate of the center of the lower left pixel of the map}
+		\item{cellsize}{the size of a pixel on the studied map}
+		\item{type}{either 'numeric' or 'factor'}
+		\item{levels}{if type = 'factor', the levels of the factor.}
 }
-\author{Jeremy VanDerWal \email{jjvanderwal@gmail.com}}
+
+\author{ Jeremy VanDerWal \email{jjvanderwal@gmail.com} }
+
 \examples{
 
 #create a simple object of class 'asc'

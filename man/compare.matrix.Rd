@@ -2,36 +2,23 @@
 \alias{compare.matrix}
 
 \title{ Biplot Comparison of Matrices }
+
 \description{
-\code{compare.matrix} compares the values within two matrices (e.g., ESRI ArcInfo ASCII 
-raster files) and produces a biplot that shows the frequency of each data 
-combination shared between the matrices. The plot is overlayed with contour 
-lines that demarcate parts of the the plot that share the same frequency of 
-data combinations.
-
-\bold{NOTE:} it is assumed the matrices are of the same extent, cell size and 
-scaled to be the same units.
-
+	\code{compare.matrix} compares the values within two matrices (e.g., ESRI ArcInfo ASCII raster files) and produces a biplot that shows the frequency of each data combination shared between the matrices. The plot is overlayed with contour lines that demarcate parts of the the plot that share the same frequency of data combinations. \cr \cr 
+	\bold{NOTE:} it is assumed the matrices are of the same extent, cell size and scaled to be the same units.
 }
-\usage{
-compare.matrix(x,y,nbins,...)
-}
+\usage{ compare.matrix(x,y,nbins,...) }
 
 \arguments{
-  \item{x}{a matrix of data; the matrix can be a raster of class 'asc' 
-  (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' 
-  (sp package)}
-  \item{y}{a matrix of data of the same extent, cell size and class as 'x'}
-  \item{nbins}{number of equally spaced bins used to partition range of values
-  in 'x' & 'y'}
-  \item{...}{other graphical parameters defined by image(), contour(), or plot()}
+	\item{x}{a matrix of data; the matrix can be a raster of class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)}
+	\item{y}{a matrix of data of the same extent, cell size and class as 'x'}
+	\item{nbins}{number of equally spaced bins used to partition range of values in 'x' & 'y'}
+	\item{...}{other graphical parameters defined by image(), contour(), or plot()}
 }
 
-\value{
-Nothing is returned but images are created.
-}
+\value{ Nothing is returned but images are created. }
 
-\author{Luke Shoo \email{luke.shoo@jcu.edu.au}}
+\author{ Luke Shoo \email{luke.shoo@jcu.edu.au} }
 
 \examples{
 
