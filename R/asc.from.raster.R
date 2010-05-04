@@ -17,7 +17,11 @@ raster.from.asc = function(x,projs=NA) {
 	ymin = attr(x, "yll") - 0.5 * cellsize
 	xmax = xmin + ncols*cellsize
 	ymax = ymin + nrows*cellsize
-	r <- raster(ncols=ncols, nrows=nrows, crs=projs, xmn=xmin, xmx=xmax, ymn=ymin, ymx=ymax)
+	if (packageDescription('raster',fields = "Version") > "1.0.4") {
+		r <- raster(ncols=ncols, nrows=nrows, xmn=xmin, xmx=xmax, ymn=ymin, ymx=ymax, crs=projs)
+	} else {
+		r <- raster(ncols=ncols, nrows=nrows, xmn=xmin, xmx=xmax, ymn=ymin, ymx=ymax, projs=projs)
+	}
 	tvals = as.vector(t(t(unclass(x))[nrows:1,])); tvals[which(is.na(tvals))] = r@file@nodatavalue
 	r <- setValues(r, as.vector(t(t(unclass(x))[nrows:1,])))
 	return(r)
