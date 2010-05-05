@@ -14,7 +14,7 @@ modelling.
 \tabular{ll}{
 Package: \tab SDMTools\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
+Version: \tab 1.1-1\cr
 Date: \tab 2010-05-05\cr
 License: \tab GPL version 2 or newer\cr
 LazyLoad: \tab yes\cr
