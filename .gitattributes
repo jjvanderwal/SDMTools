@@ -15,6 +15,7 @@ R/asc.from.raster.R -text
 R/auc.R -text
 R/compare.matrix.R -text
 R/confusion.matrix.R -text
+R/destination.R -text
 R/extract.data.R -text
 R/lcmw.R -text
 R/legend.gradient.r -text
@@ -38,6 +39,7 @@ man/asc.from.raster.Rd -text
 man/auc.Rd -text
 man/compare.matrix.Rd -text
 man/confusion.matrix.Rd -text
+man/destination.Rd -text
 man/extract.data.Rd -text
 man/lcmw.Rd -text
 man/legend.gradient.rd -text
@@ -51,3 +53,4 @@ src/ccl.c -text
 src/getmin.c -text
 src/movewindow.c -text
 src/pip.c -text
+src/vincenty.geodesics.c -text
