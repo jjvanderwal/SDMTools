@@ -11,7 +11,7 @@ legend.gradient = function(pnts,cols=heat.colors(100),limits=c(0,1), title='Lege
 		polygon(x=pnts[,1],y=c(yvals[i],yvals[i],yvals[i+1],yvals[i+1]),col=cols[i],border=F)
 	}
 	#add the text
-	text(max(pnts[,1]),min(pnts[,2]),labels=limits[1],pos=4)
-	text(max(pnts[,1]),max(pnts[,2]),labels=limits[2],pos=4)
-	text(min(pnts[,1]),max(pnts[,2]),labels=title,adj=c(0,-1))
+	text(max(pnts[,1]),min(pnts[,2]),labels=limits[1],pos=4,...)
+	text(max(pnts[,1]),max(pnts[,2]),labels=limits[2],pos=4,...)
+	text(min(pnts[,1]),max(pnts[,2]),labels=title,adj=c(0,-1),...)
 }
