@@ -3,6 +3,7 @@ function(pts, x) {
 	#check if raster from sp or raster package and convert if necessary
 	if (any(class(x) %in% 'RasterLayer')) x = asc.from.raster(x)
 	if (any(class(x) == 'SpatialGridDataFrame')) x = asc.from.sp(x)
+	if (class(x) != 'asc') stop('matrix must be of class "asc"') #check to ensure x is of class asc
 	xy <- getXYcoords(x)
 	xy$x <- xy$x + attr(x, "cellsize")/2
 	xy$x <- c(xy$x[1] - attr(x, "cellsize"),xy$x)
