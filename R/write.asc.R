@@ -8,9 +8,9 @@ function (x, file, gz=FALSE) {
     #write the header info
     cat("ncols         ",nrow(x),'\n',sep = "",file=zz)
     cat("nrows         ",ncol(x),'\n',sep = "",file=zz)
-    cat("xllcorner     ",attr(x,"xll")-attr(x,"cellsize")/2,'\n',sep = "",file=zz)
-    cat("yllcorner     ",attr(x,"yll")-attr(x,"cellsize")/2,'\n',sep = "",file=zz)
-    cat("cellsize      ", attr(x, "cellsize"),'\n',sep = "",file=zz)
+    cat("xllcorner     ",as.character(attr(x,"xll")-attr(x,"cellsize")/2),'\n',sep = "",file=zz)
+    cat("yllcorner     ",as.character(attr(x,"yll")-attr(x,"cellsize")/2),'\n',sep = "",file=zz)
+    cat("cellsize      ",as.character(attr(x, "cellsize")),'\n',sep = "",file=zz)
     cat("NODATA_value  ", -9999,'\n',sep = "",file=zz)
     #prep and write the data
     x[is.na(x)] <- -9999 #change na values
