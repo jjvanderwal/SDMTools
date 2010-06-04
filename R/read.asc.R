@@ -28,12 +28,17 @@ function (file, gz=FALSE) {
 	
 
 	#read in the data skipping the first six header rows
-	if (gz) { zz = gzfile(file, "r"); output <- scan(zz,skip=6,nlines=nl,quiet = TRUE); close(zz) } else { output <- scan(file,skip=6, quiet = TRUE) }
+	if (gz) { 
+		zz = gzfile(file, "r")
+			output <- scan(zz,skip=6,quiet = TRUE)
+			#output <- scan(zz,skip=6,nlines=nl,quiet = TRUE)
+		close(zz)
+	} else { output <- scan(file,skip=6, quiet = TRUE) }
 
 	#convert no data to NA
 	output[output == nas] <- NA
 	#convert data to matrix
-	output <- matrix(c(as.matrix(output)), ncol = nl)
+	output <- matrix(c(as.matrix(output)), ncol = nl, nrow = nc)
 	output <- output[, ncol(output):1]
 	#define the attributes
 	attr(output, "xll") <- xll
