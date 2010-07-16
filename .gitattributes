@@ -16,6 +16,7 @@ R/auc.R -text
 R/compare.matrix.R -text
 R/confusion.matrix.R -text
 R/destination.R -text
+R/distance.R -text
 R/extract.data.R -text
 R/lcmw.R -text
 R/legend.gradient.r -text
@@ -40,6 +41,7 @@ man/auc.Rd -text
 man/compare.matrix.Rd -text
 man/confusion.matrix.Rd -text
 man/destination.Rd -text
+man/distance.Rd -text
 man/extract.data.Rd -text
 man/lcmw.Rd -text
 man/legend.gradient.rd -text
