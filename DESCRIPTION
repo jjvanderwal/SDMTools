@@ -1,12 +1,11 @@
 Package: SDMTools
 Type: Package
 Title: Species Distribution Modelling Tools: Tools for processing data associated with species distribution modelling exercises.
-Version: 1.1-1
-Date: 2010-05-05
+Version: 1.1-2
+Date: 2010-07-17
 Author: Jeremy VanDerWal, Luke Shoo and Stephanie Januchowski. This package was made possible in part by support from Lorena Falconi and Collin Storlie, and financial support from the Australian Research Council & ARC Research Network for Earth System Science.
 Maintainer: Jeremy VanDerWal <jjvanderwal@gmail.com>
-Depends: adehabitat
-Suggests: raster, sp
+Suggests: adehabitat, raster, sp
 Description: This packages provides a set of tools for post processing the outcomes of species distribution modeling exercises. It includes novel methods for comparing models and tracking changes in distributions through time. It further includes methods for visualizing outcomes, selecting thresholds, calculating measures of accuracy and landscape fragmentation statistics, etc.
 License: GPL version 2 or newer
 LazyLoad: yes

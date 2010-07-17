@@ -10,7 +10,7 @@
 	\bold{Note:} this method assumes a locations are lat & lon given in WGS 84.
 }
 
-\usage{ destination(lat1, lon1=NULL, lat2=NULL, lon2=NULL, algorithm=NA)}
+\usage{ distance(lat1, lon1=NULL, lat2=NULL, lon2=NULL, algorithm=NA)}
 
 \arguments{
 	\item{lat1}{a single value or vector of values representing latitude in decimal degrees from -90 to 90 degrees. Alternatively, a data.frame or matrix can be used here with each column representing lat1, lon1, lat2, lon2 (in that order).}
