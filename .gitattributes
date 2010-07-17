@@ -11,7 +11,6 @@ R/Scalebar.R -text
 R/SigDiff.R -text
 R/ZonalStat.R -text
 R/accuracy.R -text
-R/as.asc.R -text
 R/asc.from.raster.R -text
 R/auc.R -text
 R/compare.matrix.R -text

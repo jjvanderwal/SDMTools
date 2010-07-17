@@ -8,7 +8,8 @@
 \description{
 	\code{read.asc} and \code{read.asc.gz} reads ESRI ArcInfo ASCII raster file either uncompressed or compressed using gzip. \cr \cr
 	\code{write.asc} and \code{write.asc.gz} writes an asc object to a ESRI ArcInfo ASCII raster file. The output can be either compressed or uncompressed. \cr \cr
-	These functions are faster methods based on the adehabitat import.asc and export.asc.
+	These functions are faster methods based on the adehabitat import.asc and export.asc.\cr\cr
+	\code{image.asc} and \code{print.asc} are generic methods associated with plotting & summarizing data of class 'asc'; they were modified from adehabitat package.
 }
 
 \usage{
@@ -16,15 +17,23 @@ read.asc(file,gz=FALSE)
 read.asc.gz(file)
 write.asc(x,file,gz=FALSE)
 write.asc.gz(x,file)
+\method{print}{asc}(x, \dots)
+\method{image}{asc}(x, col = gray((240:1)/256), clfac = NULL, \dots)
 }
 
 \arguments{
 	\item{file}{a character string representing the filename of the input/output file. The file extension should always be '.asc'.}
 	\item{gz}{defines if the object is or should be compressed using gzip}
 	\item{x}{an object of class 'asc' as defined in the adehabitat package}
+	\item{col}{for maps of type \code{"numeric"}, the colors to be used (see \code{help(par)})} 
+	\item{clfac}{for maps of type \code{"factor"}, a character vector giving the names of colors for each level of the factor (see \code{help(colasc)})}
+	\item{\dots}{additional arguments to be passed to the generic function \code{image} or \code{print}}
 }
 
-\details{ Implements a faster version of import.asc or export.asc from the adehabitat package. In addition, files can be read in and written to in gzip compressed format. }
+\details{ 
+Implements a faster version of import.asc or export.asc from the adehabitat package. In addition, files can be read in and written to in gzip compressed format.\cr\cr
+Generic methods of print and image were modified from adehabitat. Further details of them are found there.
+}
 
 \value{
 	Returns a raster matrix of the class 'asc' defined in the adehabitat package with the following attributes:

@@ -1,8 +1,7 @@
 "image.asc" <- function (x, col = gray((240:1)/256), clfac = NULL, ...)
 {
     ## Verifications
-    if (!inherits(x, "asc"))
-        stop("not an \"asc\" object")
+    if (!inherits(x, "asc")) stop("not an \"asc\" object")
 
     ## Coordinates of the pixels
     xy <- getXYcoords(x)
@@ -10,8 +9,7 @@
     yy <- xy$y
 
     ## If the variable is numeric
-    if (attr(x, "type") == "numeric")
-        image(x = xx, y = yy, x, asp = 1, col = col, ...)
+    if (attr(x, "type") == "numeric") image(x = xx, y = yy, x, asp = 1, col = col, ...)
 
     ## For a factor: creates colors
     if (attr(x, "type") == "factor") {
