@@ -11,7 +11,7 @@ distance = function(lat1, lon1=NULL, lat2=NULL, lon2=NULL, algorithm=NA) {
 	if (any(c(lat1,lat2) < -90) | any(c(lat1,lat2) > 90)) stop('lat must be decimal degrees between -90 & 90')
 	#cycle through and output the new data
 	out = data.frame(lat1=lat1,lon1=lon1,lat2=lat2,lon2=lon2)
-	out$distance = .Call('dist',out$lat1,out$lon1,out$lat2,out$lon2)
+	out$distance = round(.Call('dist',out$lat1,out$lon1,out$lat2,out$lon2),2) #round to the nearest mm
 	#return the output
 	return(out)
 }

@@ -11,6 +11,7 @@ R/Scalebar.R -text
 R/SigDiff.R -text
 R/ZonalStat.R -text
 R/accuracy.R -text
+R/as.asc.R -text
 R/asc.from.raster.R -text
 R/auc.R -text
 R/compare.matrix.R -text
@@ -18,11 +19,14 @@ R/confusion.matrix.R -text
 R/destination.R -text
 R/distance.R -text
 R/extract.data.R -text
+R/getXYcoords.R -text
+R/image.asc.R -text
 R/lcmw.R -text
 R/legend.gradient.r -text
 R/omission.R -text
 R/optim.thresh.R -text
 R/pnt.in.poly.R -text
+R/print.asc.R -text
 R/quick.map.r -text
 R/read.asc.R -text
 R/write.asc.R -text
@@ -43,6 +47,7 @@ man/confusion.matrix.Rd -text
 man/destination.Rd -text
 man/distance.Rd -text
 man/extract.data.Rd -text
+man/getXYcoords.Rd -text
 man/lcmw.Rd -text
 man/legend.gradient.rd -text
 man/omission.Rd -text
