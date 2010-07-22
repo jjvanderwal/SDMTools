@@ -5,9 +5,9 @@ legend.gradient = function(pnts,cols=heat.colors(100),limits=c(0,1), title='Lege
 	if(dim(pnts)[1]!=4 || dim (pnts)[2]!=2) stop ("Matrix must have dimensions of 4 rows and 2 columms")
 	if(length(cols)<2) stop("You must have 2 or more colors")
 	#break up the min and max into a number of values == length(cols)
-	yvals = seq(min(pnts[, 2]), max(pnts[, 2]), length=length(cols))
+	yvals = seq(min(pnts[, 2]), max(pnts[, 2]), length=length(cols)+1)
 	#cycle through each of the yvals and create polygons
-	for (i in 1:(length(cols)-1)){  #create the polygon for that color
+	for (i in 1:length(cols)){  #create the polygon for that color
 		polygon(x=pnts[,1],y=c(yvals[i],yvals[i],yvals[i+1],yvals[i+1]),col=cols[i],border=F)
 	}
 	#add the text
