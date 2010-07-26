@@ -26,6 +26,7 @@ R/omission.R -text
 R/optim.thresh.R -text
 R/pnt.in.poly.R -text
 R/print.asc.R -text
+R/put.data.R -text
 R/quick.map.r -text
 R/read.asc.R -text
 R/write.asc.R -text
@@ -52,6 +53,7 @@ man/legend.gradient.rd -text
 man/omission.Rd -text
 man/optim.thresh.Rd -text
 man/pnt.in.poly.Rd -text
+man/put.data.Rd -text
 man/quick.map.rd -text
 man/read.asc.Rd -text
 src/PS.c -text
