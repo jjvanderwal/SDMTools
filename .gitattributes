@@ -12,13 +12,17 @@ R/SigDiff.R -text
 R/ZonalStat.R -text
 R/accuracy.R -text
 R/asc.from.raster.R -text
+R/asc2dataframe.R -text
 R/auc.R -text
+R/circular.averaging.R -text
 R/compare.matrix.R -text
 R/confusion.matrix.R -text
+R/dataframe2asc.R -text
 R/destination.R -text
 R/distance.R -text
 R/extract.data.R -text
 R/getXYcoords.R -text
+R/grid.info.R -text
 R/image.asc.R -text
 R/lcmw.R -text
 R/legend.gradient.r -text
@@ -29,6 +33,7 @@ R/print.asc.R -text
 R/put.data.R -text
 R/quick.map.r -text
 R/read.asc.R -text
+R/vector.averaging.R -text
 R/write.asc.R -text
 man/ClassStat.Rd -text
 man/ConnCompLabel.Rd -text
