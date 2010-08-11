@@ -1,4 +1,3 @@
-/* File: pip.c */ 
 /*
 this is code for extracting information about point in polygon..
 

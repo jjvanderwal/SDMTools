@@ -61,9 +61,9 @@ man/pnt.in.poly.Rd -text
 man/put.data.Rd -text
 man/quick.map.rd -text
 man/read.asc.Rd -text
-src/PS.c -text
-src/ccl.c -text
+src/ConnectedComponentLabelling.c -text
 src/getmin.c -text
 src/movewindow.c -text
-src/pip.c -text
+src/patchstats.c -text
+src/pointinpolygon.c -text
 src/vincenty.geodesics.c -text

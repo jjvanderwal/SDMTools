@@ -30,7 +30,7 @@ function(mat,cellsize=1)	{
 	#get the unique patch ID's
 	ID.vals = as.numeric(na.omit(unique(as.vector(mat))));ID.vals = ID.vals[order(ID.vals)]
 	#extract the base patch info
-	out = as.data.frame(.Call('PS',mat,ID.vals))
+	out = as.data.frame(.Call('projectedPS',mat,ID.vals))
 	names(out) = c('patchID','n.cell','n.core.cell','n.edges.perimeter','n.edges.internal')
 	#calculate other stats
 	out$area = out$n.cell * cellsize^2

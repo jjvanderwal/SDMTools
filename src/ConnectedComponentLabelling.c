@@ -1,4 +1,3 @@
-/* File: ccl.c */ 
 /*
 this code was is a 1 pass implementation of connected components labelling
 
