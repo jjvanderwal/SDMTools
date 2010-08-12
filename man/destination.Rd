@@ -50,8 +50,6 @@
 
 \references{ Vincenty, T. 1975. Direct and Inverse Solutions of Geodesics on the Ellipsoid with application of Nested Equations. Survey Review, vol XXII no 176. \url{http://www.ngs.noaa.gov/PUBS_LIB/inverse.pdf} }
 
-\seealso{ \code{\link{bufferhull}} }
-
 \examples{
 
 ###single lat lons

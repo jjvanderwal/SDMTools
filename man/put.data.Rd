@@ -8,7 +8,7 @@
 	\bold{Note:} there is no interpolation done here. The values given replace the values of the raster cell the point falls into.
 }
 
-\usage{ extract.data(pts,x) }
+\usage{ put.data(pts,x) }
 
 \arguments{
 	\item{pts}{a three-column data frame or matrix with the x and y coordinates of the locations of interest and the third column being the z values to put in the ascii grid file.}

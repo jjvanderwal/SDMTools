@@ -16,8 +16,8 @@
 	\item{lat1}{a single value or vector of values representing latitude in decimal degrees from -90 to 90 degrees. Alternatively, a data.frame or matrix can be used here with each column representing lat1, lon1, lat2, lon2 (in that order).}
 	\item{lon1}{a single value or vector of values representing longitude in decimal degrees from -180 to 180 degrees. If NULL, lat1 is assumed to be a matrix or data.frame.}
 	\item{lat2}{a single value or vector of values representing latitude in decimal degrees from -90 to 90 degrees. If NULL, lat1 is assumed to be a matrix or data.frame.}
-	\item{lat2}{a single value or vector of values representing longitude in decimal degrees from -180 to 180 degrees. If NULL, lat1 is assumed to be a matrix or data.frame.}
-	\item{algrithm}{currently not implemented.}
+	\item{lon2}{a single value or vector of values representing longitude in decimal degrees from -180 to 180 degrees. If NULL, lat1 is assumed to be a matrix or data.frame.}
+	\item{algorithm}{currently not implemented.}
 }
 
 \source{
@@ -38,7 +38,7 @@
 
 \references{ Vincenty, T. 1975. Direct and Inverse Solutions of Geodesics on the Ellipsoid with application of Nested Equations. Survey Review, vol XXII no 176. \url{http://www.ngs.noaa.gov/PUBS_LIB/inverse.pdf} }
 
-\seealso{ \code{\link{direction}} }
+\seealso{ \code{\link{destination}} }
 
 \examples{
 

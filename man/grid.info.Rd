@@ -6,11 +6,12 @@ Since spatial grids in geographic projections do not have equal area or perimete
 Outputs lengths are in m using Vincenty's equation (\code{distance})and areas in m2. Surface areas are calculated summing surface areas of spherical polygons as estimated using l'Huiller's formula.
 }
 \usage{
-grid.info(lats,cellsize)
+grid.info(lats,cellsize,r=6378137)
 }
 \arguments{
   \item{lats}{is a vector of latitudes representing the midpoint of grid cells }
   \item{cellsize}{is a single value (assuming square cells) or a two value vector (rectangular cells) representing the height (latitude) and width (longitude) of the cells}
+  \item{r}{is a single value representing the radius of the globe in m. Default is for the WGS84 elipsoid}
 }
 \value{ 
 	a data.frame listing:

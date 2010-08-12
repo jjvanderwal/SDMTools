@@ -3,6 +3,8 @@
 \alias{read.asc.gz}
 \alias{write.asc}
 \alias{write.asc.gz}
+\alias{image.asc}
+\alias{print.asc}
 
 \title{ESRI ASCII Raster File Import And Export}
 \description{

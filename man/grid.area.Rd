@@ -10,7 +10,7 @@ grid.area(mat)
 grid.perimeter(mat) 
 }
 \arguments{
-  \item{mat}{a matrix representing a raster of class 'asc' (this & adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)}}
+  \item{mat}{a matrix representing a raster of class 'asc' (this & adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)}
 }
 \value{ 
 	\item{grid.area}{Returns an ascii grid file which contains the values of the area in each cell.}

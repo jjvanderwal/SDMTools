@@ -1,8 +1,8 @@
 "getXYcoords" <- function(w)
 {
 	#check if raster from sp or raster package and convert if necessary
-	if (any(class(w) %in% 'RasterLayer')) w = asc.from.raster(mat)
-	if (any(class(w) == 'SpatialGridDataFrame')) w = asc.from.sp(mat)
+	if (any(class(w) %in% 'RasterLayer')) w = asc.from.raster(w)
+	if (any(class(w) == 'SpatialGridDataFrame')) w = asc.from.sp(w)
     if (!inherits(w, "asc")) stop("must be of class asc")
 
     # Gets the attributes
