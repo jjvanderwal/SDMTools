@@ -15,9 +15,10 @@ asc2dataframe = function(filenames,varnames=NULL,gz=FALSE) {
 	out = NULL #define the output
 	for (ii in 1:length(filenames)) { #cycle through each of the files
 		tfile = filenames[ii]; varname = varnames[ii] #define the file and variable name
+		cat('working with',tfile,'...\n')
 		if (!file.exists(tfile)) { warning(paste(tfile,'does not exist and was not used')); next } #check if the file exists, if not move to the next file
 		tasc = read.asc(tfile,gz=gz) #read in the ascii grid file
-				if (is.null(out)) { #if out is still null, populate the row/col/x,y data
+		if (is.null(out)) { #if out is still null, populate the row/col/x,y data
 			out = as.data.frame(which(is.finite(tasc),arr.ind=T)) #get row column info for actual data
 			out$y = getXYcoords(tasc)$y[out$col]#extract the longitudes
 			out$x = getXYcoords(tasc)$x[out$row] #extract the latitudes
