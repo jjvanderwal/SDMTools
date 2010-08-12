@@ -3,7 +3,7 @@
 #cell size is a single value representing the width/height of cell edges (assuming square cells and distance is in m)
 #bkgd is the background value for which statistics will not be calculated
 
-ClassStat  = function(mat,cellsize=1,bkgd=NA) {
+ClassStat  = function(mat,cellsize=1,bkgd=NA,latlon=FALSE) {
 	##method to calculate shape index or aggregation indexes
 	#a = area of the patch in number of cells
 	#p is the perimeter in number of edges
@@ -52,22 +52,22 @@ ClassStat  = function(mat,cellsize=1,bkgd=NA) {
 		#create a reclassed matrix
 		mat2 = mat; mat2 = mat * 0; mat2[which(mat==cl)] = 1
 		#get the patch info for the class
-		out.patch = PatchStat(.Call('ccl',mat2),cellsize=cellsize);rm(mat2)
+		out.patch = PatchStat(ConnCompLabel(mat2),cellsize=cellsize,latlon=latlon);rm(mat2)
 		#define a couple constants
 		L.cell = sum(out.patch$n.cell) #n cells in landscape
-		L.area = L.cell * cellsize^2 #full area of landscape
+		L.area = sum(out.patch$area) #full area of landscape
 		#remove the background patch (id = 0)
-		out.patch = out.patch[-1,]		
+		if (0 %in% out.patch$patchID) out.patch = out.patch[-which(out.patch$patchID==0),]		
 		#create a temporary variable to store output & calculate patch stats
 		tout = list(class=cl)
 		tout$n.patches = nrow(out.patch)
-		tout$total.area = sum(out.patch$n.cell * cellsize^2)
-		tout$prop.landscape = sum(out.patch$n.cell) / L.cell
+		tout$total.area = sum(out.patch$area)
+		tout$prop.landscape = tout$total.area / L.area
 		tout$patch.density = tout$n.patches / L.area
 		tout$total.edge = sum(out.patch$perimeter)
 		tout$edge.density = tout$total.edge / L.area
 		tout$landscape.shape.index = shape.index(sum(out.patch$n.cell),sum(out.patch$n.edges.perimeter))
-		tout$largest.patch.index = max(out.patch$n.cell) / L.cell
+		tout$largest.patch.index = max(out.patch$area) / L.area
 		tout$mean.patch.area = mean(out.patch$area)
 		tout$sd.patch.area = sd(out.patch$area)
 		tout$min.patch.area = min(out.patch$area)
@@ -85,12 +85,12 @@ ClassStat  = function(mat,cellsize=1,bkgd=NA) {
 		tout$sd.frac.dim.index = sd(out.patch$frac.dim.index,na.rm=T)
 		tout$min.frac.dim.index = min(out.patch$frac.dim.index,na.rm=T)
 		tout$max.frac.dim.index = max(out.patch$frac.dim.index,na.rm=T)	
-		tout$total.core.area = sum(out.patch$n.core.cell * cellsize^2)
-		tout$prop.landscape.core = sum(out.patch$n.core.cell) / L.cell
-		tout$mean.patch.core.area = mean(out.patch$n.core.cell * cellsize^2)
-		tout$sd.patch.core.area = sd(out.patch$n.core.cell * cellsize^2)
-		tout$min.patch.core.area = min(out.patch$n.core.cell * cellsize^2)
-		tout$max.patch.core.area = max(out.patch$n.core.cell * cellsize^2)
+		tout$total.core.area = sum(out.patch$core.area)
+		tout$prop.landscape.core = tout$total.core.area / L.area
+		tout$mean.patch.core.area = mean(out.patch$core.area)
+		tout$sd.patch.core.area = sd(out.patch$core.area)
+		tout$min.patch.core.area = min(out.patch$core.area)
+		tout$max.patch.core.area = max(out.patch$core.area)
 		tout$prop.like.adjacencies = sum(out.patch$n.edges.internal) / sum(out.patch$n.edges.internal+out.patch$n.edges.perimeter*2)
 		tout$aggregation.index = aggregation.index(sum(out.patch$n.cell),sum(out.patch$n.edges.internal)/2)
 		tout$lanscape.division.index = 1-sum((out.patch$n.cell / L.cell)^2)

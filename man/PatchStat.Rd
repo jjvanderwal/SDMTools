@@ -5,11 +5,12 @@
 
 \description{ \code{PatchStat} calculates the patch statistics for individual patches identified in a matrix of data. The matrix can be a raster of class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package). }
 
-\usage{ PatchStat(mat,cellsize=1) }
+\usage{ PatchStat(mat,cellsize=1,latlon=FALSE) }
 
 \arguments{
-	\item{mat}{a matrix of data with individual patches identified as with \code{ConnCompLabel}; The matrix can be a raster of class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)}
+	\item{mat}{a matrix of data with individual patches identified as with \code{ConnCompLabel}; The matrix can be a raster of class 'asc' (this & adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)}
 	\item{cellsize}{cell size (in meters) is a single value representing the width/height of cell edges (assuming square cells)}
+	\item{latlon}{boolean value representing if the data is geographic. If latlon == TRUE, matrix must be of class 'asc', 'RasterLayer' or 'SpatialGridDataFrame'}
 }
 
 \details{ The patch statistics are based on statistics calculated by fragstats \url{http://www.umass.edu/landeco/research/fragstats/fragstats.html}. }

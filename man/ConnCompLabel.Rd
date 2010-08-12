@@ -10,7 +10,7 @@
 
 \usage{ ConnCompLabel(mat) }
 
-\arguments{ \item{mat}{is a binary matrix of data with 0 representing background and 1 representing environment of interest. NA values are acceptable. The matrix can be a raster of class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)} }
+\arguments{ \item{mat}{is a binary matrix of data with 0 representing background and 1 representing environment of interest. NA values are acceptable. The matrix can be a raster of class 'asc' (this & adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)} }
 
 \value{ A matrix of the same dim and class of \code{mat} in which unique components (individual patches) are numbered 1:n with 0 remaining background value. }
 

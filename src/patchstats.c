@@ -6,8 +6,7 @@ this is code to calculate patch-based landscape statistics
 
 //global variables
 int nrow, ncol;
-int *data, *ID; 
-int *out;
+int *data; 
 SEXP ans;
 
 /* 
@@ -26,7 +25,7 @@ SEXP projectedPS(SEXP tdata, SEXP IDs)
     nrow = dims[0]; ncol = dims[1]; //assign the number of rows and columns in the matrix
 	//define patch ids
 	PROTECT(IDs = coerceVector(IDs, INTSXP));
-	ID = INTEGER(IDs); //this is the unique IDs of the patches
+	int *ID = INTEGER(IDs); //this is the unique IDs of the patches
 	int npatch = length(IDs);
 	
 	//setup temporary outputs
@@ -52,10 +51,10 @@ SEXP projectedPS(SEXP tdata, SEXP IDs)
 	*/
 	for (row=0; row<nrow; row++)	{
 		for (col=0; col<ncol; col++)	{	
-			if (data[row+nrow*col]!=NA_INTEGER)	{
+			tval = data[row+nrow*col];
+			if (tval!=NA_INTEGER)	{
 				np = ni = 0;
 				//go through the eight neighbouring cells and collect data
-				tval = data[row+nrow*col];
 				rook[0] = (row>0) ? data[(row-1)+nrow*(col)]:-9999;
 				rook[1] = (col<ncol-1) ? data[(row)+nrow*(col+1)]:-9999;
 				rook[2] = (row<nrow-1) ? data[(row+1)+nrow*(col)]:-9999;
@@ -82,7 +81,7 @@ SEXP projectedPS(SEXP tdata, SEXP IDs)
 		}
 	}
 	//setup the output matrix
-	PROTECT(ans = allocMatrix(INTSXP, npatch, 5)); out = INTEGER(ans); //pointer to output dataset
+	PROTECT(ans = allocMatrix(INTSXP, npatch, 5)); int *out = INTEGER(ans); //pointer to output dataset
 	for (row=0; row<npatch; row++)	{
 		out[row] = ID[row];
 		out[row + npatch] = ncell[row];
@@ -105,8 +104,8 @@ SEXP geographicPS(SEXP tdata, SEXP IDs, SEXP AREAS, SEXP TOPS, SEXP BOTTOMS, SEX
 	int *dims = INTEGER(coerceVector(getAttrib(tdata, R_DimSymbol), INTSXP)); //get the dimension of the input matrix
     nrow = dims[0]; ncol = dims[1]; //assign the number of rows and columns in the matrix
 	//define patch ids
-	PROTECT(IDs = coerceVector(IDs, INTSXP));
-	ID = INTEGER(IDs); //this is the unique IDs of the patches
+	PROTECT(IDs = coerceVector(IDs, REALSXP));
+	double *ID = REAL(IDs); //this is the unique IDs of the patches
 	int npatch = length(IDs);
 	//define the area and perimeter information
 	PROTECT(AREAS = coerceVector(AREAS, REALSXP)); double *areas = REAL(AREAS); //get a pointer to the areas
@@ -115,20 +114,21 @@ SEXP geographicPS(SEXP tdata, SEXP IDs, SEXP AREAS, SEXP TOPS, SEXP BOTTOMS, SEX
 	PROTECT(SIDES = coerceVector(SIDES, REALSXP)); double *sides = REAL(SIDES); //get a pointer to the length of the sides of the cells
 		
 	//setup temporary outputs
-	SEXP ncells, ncellscore, nperimeters, ninternals;
-	PROTECT(ncells = allocVector(INTSXP, npatch)); int *ncell = INTEGER(ncells); //number of cells per patch
-	PROTECT(ncellscore = allocVector(INTSXP, npatch)); int *ncellcore = INTEGER(ncellscore); //number of core cells (core in 8 directions)	
-	PROTECT(nperimeters = allocVector(INTSXP, npatch)); int *nperim = INTEGER(nperimeters); //number of edges on teh perimeter
-	PROTECT(ninternals = allocVector(INTSXP, npatch)); int *nintern = INTEGER(ninternals);  // number of same patch shared edges
-
-	//int ncell[npatch], ncellcore[npatch], nperim[npatch], nintern[npatch];
+	SEXP ncells, ncellscore, nperimeters, ninternals, outareas, outareascore, outperimeters;
+	PROTECT(ncells = allocVector(REALSXP, npatch)); double *ncell = REAL(ncells); //number of cells per patch
+	PROTECT(ncellscore = allocVector(REALSXP, npatch)); double *ncellcore = REAL(ncellscore); //number of core cells (core in 8 directions)	
+	PROTECT(nperimeters = allocVector(REALSXP, npatch)); double *nperim = REAL(nperimeters); //number of edges on teh perimeter
+	PROTECT(ninternals = allocVector(REALSXP, npatch)); double *nintern = REAL(ninternals);  // number of same patch shared edges
+	PROTECT(outareas = allocVector(REALSXP, npatch)); double *outarea = REAL(outareas); //areas per patch
+	PROTECT(outareascore = allocVector(REALSXP, npatch)); double *outareacore = REAL(outareascore); //core area cells (core in 8 directions)	
+	PROTECT(outperimeters = allocVector(REALSXP, npatch)); double *outperim = REAL(outperimeters); //length of perimeter
 	//set everything to 0
 	int ii,row,col; 
-	for (ii=0;ii<npatch;ii++) ncell[ii] = nperim[ii] = nintern[ii] = ncellcore[ii] = 0;
+	for (ii=0;ii<npatch;ii++) { ncell[ii] = nperim[ii] = nintern[ii] = ncellcore[ii] = outarea[ii] = outareacore[ii] = outperim[ii] = 0.0; }
 	
 	//work with the data
 	//get the area and associated metrics
-	int np,ni,core; //temporary values representing nperim, nintern
+	double np,ni,core,perim; //temporary values representing nperim, nintern
 	int tval, rook[4], queen[4]; //values of the 9 cells of interest 
 	/*
 	queen[3],rook[0],queen[0]
@@ -136,11 +136,11 @@ SEXP geographicPS(SEXP tdata, SEXP IDs, SEXP AREAS, SEXP TOPS, SEXP BOTTOMS, SEX
 	queen[2],rook[2],queen[1]
 	*/
 	for (row=0; row<nrow; row++)	{
-		for (col=0; col<ncol; col++)	{	
-			if (data[row+nrow*col]!=NA_INTEGER)	{
-				np = ni = 0;
+		for (col=0; col<ncol; col++)	{
+			tval = data[row+nrow*col];
+			if (tval!=NA_INTEGER)	{
+				np = ni = 0; perim = 0.0;
 				//go through the eight neighbouring cells and collect data
-				tval = data[row+nrow*col];
 				rook[0] = (row>0) ? data[(row-1)+nrow*(col)]:-9999;
 				rook[1] = (col<ncol-1) ? data[(row)+nrow*(col+1)]:-9999;
 				rook[2] = (row<nrow-1) ? data[(row+1)+nrow*(col)]:-9999;
@@ -150,16 +150,19 @@ SEXP geographicPS(SEXP tdata, SEXP IDs, SEXP AREAS, SEXP TOPS, SEXP BOTTOMS, SEX
 				queen[2] = (row<nrow-1 && col>0) ? data[(row+1)+nrow*(col-1)]:-9999;
 				queen[3] = (row>0 && col>0) ? data[(row-1)+nrow*(col-1)]:-9999;
 				//cycle through and get temp values of edges
-				for (ii=0;ii<4;ii++){if (tval==rook[ii]){ni++;} else {np++;}};
+				if (tval==rook[0]) { ni++; } else { np++;perim+=sides[col]; }
+				if (tval==rook[1]) { ni++; } else { np++;perim+=tops[col]; }
+				if (tval==rook[2]) { ni++; } else { np++;perim+=sides[col]; }
+				if (tval==rook[3]) { ni++; } else { np++;perim+=bottoms[col]; }
 				//check if cell is acore cell
 				core=1;	if (np==0){core=0;for (ii=0;ii<4;ii++){if (tval!=queen[ii]) core++;}}
 				//assign the values to the proper patch id info
 				for (ii=0;ii<npatch;ii++){
 					if (ID[ii]==tval){
-						ncell[ii] ++;
-						nperim[ii] += np;
-						nintern[ii] += ni;
-						if (core==0) ncellcore[ii] ++;
+						ncell[ii] ++; nperim[ii] += np; nintern[ii] += ni;
+						outarea[ii] += areas[col]; //printf('%f',outarea[ii]);
+						outperim[ii] += perim;
+						if (core==0) { ncellcore[ii] ++; outareacore[ii]+=areas[col]; }
 						break;
 					}
 				}				
@@ -167,17 +170,20 @@ SEXP geographicPS(SEXP tdata, SEXP IDs, SEXP AREAS, SEXP TOPS, SEXP BOTTOMS, SEX
 		}
 	}
 	//setup the output matrix
-	PROTECT(ans = allocMatrix(INTSXP, npatch, 5)); out = INTEGER(ans); //pointer to output dataset
+	PROTECT(ans = allocMatrix(REALSXP, npatch, 8)); double *out = REAL(ans); //pointer to output dataset
 	for (row=0; row<npatch; row++)	{
 		out[row] = ID[row];
 		out[row + npatch] = ncell[row];
 		out[row + npatch*2] = ncellcore[row];
 		out[row + npatch*3] = nperim[row];
 		out[row + npatch*4] = nintern[row];
+		out[row + npatch*5] = outarea[row];
+		out[row + npatch*6] = outareacore[row];
+		out[row + npatch*7] = outperim[row];
 	}
 
 	//return the output data
-	UNPROTECT(7);
+	UNPROTECT(14);
     return(ans); 
 }
 

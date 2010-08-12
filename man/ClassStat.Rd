@@ -5,12 +5,13 @@
 
 \description{ \code{ClassStat} calculates the class statistics for patch types identified in a matrix of data or in a raster of class 'asc' (SDMTools & adehabitat packages), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package). }
 
-\usage{ ClassStat(mat,cellsize=1,bkgd=NA) }
+\usage{ ClassStat(mat,cellsize=1,bkgd=NA,latlon=FALSE) }
 
 \arguments{
 	\item{mat}{a matrix of data with patches identified as classes (unique integer values) as e.g., a binary lanscape of a species distribution or a vegetation map. Matrix can be a raster of class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)}
 	\item{cellsize}{cell size (in meters) is a single value representing the width/height of cell edges (assuming square cells)}
 	\item{bkgd}{the background value for which statistics will not be calculated}
+	\item{latlon}{boolean value representing if the data is geographic. If latlon == TRUE, matrix must be of class 'asc', 'RasterLayer' or 'SpatialGridDataFrame'}
 }
 
 \details{ The class statistics are based on statistics calculated by fragstats \url{http://www.umass.edu/landeco/research/fragstats/fragstats.html}. }

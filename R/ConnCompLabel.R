@@ -4,7 +4,7 @@
 ConnCompLabel <- 
 function(mat)	{
 	#check input for class for returning info
-	if (class(mat) == 'asc') { 
+	if (any(class(mat) == 'asc')) { 
 		attrib = attributes(mat)
 	} else if (any(class(mat) %in% 'RasterLayer')) {
 		attrib = mat; mat = asc.from.raster(mat)
