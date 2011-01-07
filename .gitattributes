@@ -1,6 +1,7 @@
 * text=auto !eol
 /DESCRIPTION -text
 /NAMESPACE -text
+R/COGravity.R -text
 R/ClassStat.R -text
 R/ConnCompLabel.R -text
 R/ImageDiff.R -text
@@ -37,6 +38,8 @@ R/quick.map.r -text
 R/read.asc.R -text
 R/vector.averaging.R -text
 R/write.asc.R -text
+R/wt.mean.R -text
+man/COGravity.Rd -text
 man/ClassStat.Rd -text
 man/ConnCompLabel.Rd -text
 man/Istat.Rd -text
@@ -66,6 +69,7 @@ man/pnt.in.poly.Rd -text
 man/put.data.Rd -text
 man/quick.map.rd -text
 man/read.asc.Rd -text
+man/wt.mean.Rd -text
 src/ConnectedComponentLabelling.c -text
 src/getmin.c -text
 src/movewindow.c -text
