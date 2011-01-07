@@ -1,2 +1,2 @@
-exportPattern("^([^.]|\\..+\\.)")
+exportPattern("^[^\\.]")
 useDynLib(SDMTools)
