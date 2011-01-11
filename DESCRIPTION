@@ -7,5 +7,5 @@ Author: Jeremy VanDerWal, Lorena Falconi, Stephanie Januchowski, Luke Shoo and C
 Maintainer: Jeremy VanDerWal <jjvanderwal@gmail.com>
 Suggests: adehabitat, raster, sp
 Description: This packages provides a set of tools for post processing the outcomes of species distribution modeling exercises. It includes novel methods for comparing models and tracking changes in distributions through time. It further includes methods for visualizing outcomes, selecting thresholds, calculating measures of accuracy and landscape fragmentation statistics, etc.. This package was made possible in part by financial support from the Australian Research Council & ARC Research Network for Earth System Science.
-License: GPL version 2 or newer
+License: GPL (>= 2)
 LazyLoad: yes
