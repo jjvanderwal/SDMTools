@@ -16,7 +16,7 @@ grid.perimeter(mat)
 	\item{grid.area}{Returns an ascii grid file which contains the values of the area in each cell.}
 	\item{grid.perimter}{Returns an ascii grid file which contains the values of the perimeter in each cell. }
 }
-\author{ Lorena Falconi \email{lorefalconi@gmail.com} }
+\author{ Jeremy VanDerWal \email{jjvanderwal@gmail.com} & Lorena Falconi \email{lorefalconi@gmail.com} }
 \examples{
 #Create an ascii file
 y=seq(10,50,0.5)
