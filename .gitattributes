@@ -14,6 +14,7 @@ R/ZonalStat.R -text
 R/accuracy.R -text
 R/asc.from.raster.R -text
 R/asc2dataframe.R -text
+R/aspect.R -text
 R/auc.R -text
 R/circular.averaging.R -text
 R/compare.matrix.R -text
@@ -36,6 +37,7 @@ R/print.asc.R -text
 R/put.data.R -text
 R/quick.map.r -text
 R/read.asc.R -text
+R/slope.R -text
 R/vector.averaging.R -text
 R/write.asc.R -text
 R/wt.mean.R -text
@@ -69,10 +71,12 @@ man/pnt.in.poly.Rd -text
 man/put.data.Rd -text
 man/quick.map.rd -text
 man/read.asc.Rd -text
+man/slope.Rd -text
 man/wt.mean.Rd -text
 src/ConnectedComponentLabelling.c -text
 src/getmin.c -text
 src/movewindow.c -text
 src/patchstats.c -text
 src/pointinpolygon.c -text
+src/slope.aspect.c -text
 src/vincenty.geodesics.c -text
