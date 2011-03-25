@@ -61,7 +61,6 @@ SEXP slope (SEXP x, SEXP widths, SEXP heights) {
 	double *data = REAL(x), *width = REAL(widths), *height = REAL(heights); //create pointers to the data
 	int *dims = INTEGER(coerceVector(getAttrib(x, R_DimSymbol), INTSXP)); //get the dimension of the input matrix
     int nrows = dims[0]; int ncols = dims[1]; //assign the number of rows and columns in the matrix
-	printf("nrows = %i ... ncols = %i\n",nrows,ncols); 
 	SEXP ans; PROTECT(ans = allocMatrix(REALSXP, nrows, ncols)); ;//setup the output
 	double *out = REAL(ans); //pointer to output dataset
 	
