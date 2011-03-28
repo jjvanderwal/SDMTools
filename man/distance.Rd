@@ -35,7 +35,7 @@
 		\item{lon2}{the destination longitude}
 		\item{lat2}{the destination latitude}
 		\item{distance}{the distance used}
-		\item{bearing}(if requested, the bearing between the two points}
+		\item{bearing}{if requested, the bearing between the two points}
 }
 
 \author{ Jeremy VanDerWal \email{jjvanderwal@gmail.com} }
