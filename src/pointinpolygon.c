@@ -21,8 +21,8 @@ SEXP pip(SEXP pntx, SEXP pnty, SEXP pntn, SEXP polyx, SEXP polyy, SEXP polyn)
 	PROTECT(polyy = coerceVector(polyy, REALSXP)); double *ply = REAL(polyy); // polygon y values
 	PROTECT(polyn = coerceVector(polyn, INTSXP)); int npl = INTEGER(polyn)[0]; // number of polygon points
 	
-	printf("n points ... %d \n", npt);
-	printf("n poly points ... %d \n", npl);
+	//printf("n points ... %d \n", npt);
+	//printf("n poly points ... %d \n", npl);
 	
 	//define the output variables
 	SEXP ans; int *out; 
