@@ -9,12 +9,12 @@ function (file, gz=FALSE) {
 	
 	#read in the header
 	if (gz) { zz <- gzfile(file, "r") } else { zz <- file(file, "r") }
-		nc <- scan(zz,what=list('',''),nlines=1); nc <- as.numeric(nc[[2]][1])#number of columns
-		nl <- scan(zz,what=list('',''),nlines=1); nl <- as.numeric(nl[[2]][1])#number of rows
-		xll <- scan(zz,what=list('',''),nlines=1); #lower left corner
-		yll <- scan(zz,what=list('',''),nlines=1); #lower left corner
-		cs <- scan(zz,what=list('',''),nlines=1); cs <- as.numeric(cs[[2]][1])#cell size
-		nas <- scan(zz,what=list('',''),nlines=1); nas <- as.numeric(nas[[2]][1])#nodata value
+		nc <- scan(zz,what=list('',''),nlines=1,quiet=TRUE); nc <- as.numeric(nc[[2]][1])#number of columns
+		nl <- scan(zz,what=list('',''),nlines=1,quiet=TRUE); nl <- as.numeric(nl[[2]][1])#number of rows
+		xll <- scan(zz,what=list('',''),nlines=1,quiet=TRUE); #lower left corner
+		yll <- scan(zz,what=list('',''),nlines=1,quiet=TRUE); #lower left corner
+		cs <- scan(zz,what=list('',''),nlines=1,quiet=TRUE); cs <- as.numeric(cs[[2]][1])#cell size
+		nas <- scan(zz,what=list('',''),nlines=1,quiet=TRUE); nas <- as.numeric(nas[[2]][1])#nodata value
 	#close the link to the file
 	close(zz)
 	
