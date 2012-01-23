@@ -23,7 +23,7 @@ function (file, gz=FALSE) {
 	if ((yll[[1]][1] == "yllcenter") | (xll[[1]][1] == "YLLCENTER")) { yll=as.numeric(yll[[2]][1]) } else { yll=as.numeric(yll[[2]][1])+ cs/2 }
 
 	#read in the data skipping the first six header rows
-	if (gz) { output <- scan(gzfile(file, "r"),nmax=nl*nc,skip=6,quiet = TRUE)
+	if (gz) { zz <- gzfile(file, "r"); output <- scan(zz,nmax=nl*nc,skip=6,quiet = TRUE); close(zz);
 	} else { output <- scan(file,nmax=nl*nc,skip=6, quiet = TRUE) }
 
 	#convert no data to NA
