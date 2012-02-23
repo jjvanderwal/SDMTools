@@ -4,7 +4,7 @@ asc.from.raster = function(x) {
 	cellsize = (x@extent@ymax-x@extent@ymin)/x@nrows
 	yll = x@extent@ymin + 0.5 * cellsize
 	xll = x@extent@xmin + 0.5 * cellsize
-	tmat = t(matrix(x@data@values,nr=x@nrows,ncol=x@ncols,byrow=T)[x@nrows:1,])
+	tmat = t(matrix(getValues(x),nr=x@nrows,ncol=x@ncols,byrow=T)[x@nrows:1,])
 	tmat[which(tmat==x@file@nodatavalue)] = NA
 	return(as.asc(tmat,yll=yll,xll=xll,cellsize=cellsize))
 }
@@ -17,11 +17,6 @@ raster.from.asc = function(x,projs=NA) {
 	ymin = attr(x, "yll") - 0.5 * cellsize
 	xmax = xmin + ncols*cellsize
 	ymax = ymin + nrows*cellsize
-	# if (packageDescription('raster',fields = "Version") > "1.0.4") {
-		# r <- raster(ncols=ncols, nrows=nrows, xmn=xmin, xmx=xmax, ymn=ymin, ymx=ymax, crs=projs)
-	# } else {
-		# r <- raster(ncols=ncols, nrows=nrows, xmn=xmin, xmx=xmax, ymn=ymin, ymx=ymax, projs=projs)
-	# }
 	r <- raster(ncols=ncols, nrows=nrows, xmn=xmin, xmx=xmax, ymn=ymin, ymx=ymax)
 	projection(r) <- projs
 	tvals = as.vector(t(t(unclass(x))[nrows:1,])); tvals[which(is.na(tvals))] = r@file@nodatavalue
@@ -48,13 +43,11 @@ as.asc = function(x, xll=1, yll=1, cellsize=1,type=c("numeric", "factor"),lev=le
     #check inputs
     type=match.arg(type)
     if (!inherits(x, "matrix")) stop("x should be a matrix")
-
     # creates the attributes
     mode(x) = "numeric"; attr(x, "xll") = xll; attr(x, "yll") = yll
     attr(x, "cellsize")=cellsize; attr(x, "type") = type
     if (type=="factor") attr(x, "levels") = lev
     class(x) = "asc"
-
     #return the object
     return(x)
 }
