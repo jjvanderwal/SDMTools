@@ -20,7 +20,7 @@ dataframe2asc = function(tdata,filenames=NULL,outdir=getwd(),gz=FALSE) {
 		longs=unique(tdata[,2]);longs=sort(longs)
 		cellsize = min(c(diff(lats),diff(longs)))  # set cell size
 		nc=ceiling((max(lats)-min(lats))/cellsize)+1; nr=ceiling((max(longs)-min(longs))/cellsize)+1
-		out.asc=as.asc(matrix(NA,nr=nr,nc=nc),xll=min(longs),yll=min(lats),cellsize=cellsize)
+		out.asc=as.asc(matrix(NA,nrow=nr,ncol=nc),xll=min(longs),yll=min(lats),cellsize=cellsize)
 		out.asc = put.data(tdata[,c(2:1,ii)],out.asc)
 		write.asc(out.asc,paste(outdir,'/',filenames[ii-2],sep=''),gz=gz)  #put the name and extention
 	}

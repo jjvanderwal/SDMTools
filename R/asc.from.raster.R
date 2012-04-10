@@ -4,7 +4,7 @@ asc.from.raster = function(x) {
 	cellsize = (x@extent@ymax-x@extent@ymin)/x@nrows
 	yll = x@extent@ymin + 0.5 * cellsize
 	xll = x@extent@xmin + 0.5 * cellsize
-	tmat = t(matrix(getValues(x),nr=x@nrows,ncol=x@ncols,byrow=T)[x@nrows:1,])
+	tmat = t(matrix(getValues(x),nrow=x@nrows,ncol=x@ncols,byrow=T)[x@nrows:1,])
 	tmat[which(tmat==x@file@nodatavalue)] = NA
 	return(as.asc(tmat,yll=yll,xll=xll,cellsize=cellsize))
 }
@@ -30,7 +30,7 @@ asc.from.sp = function(x) {
 	yll = as.numeric(x@grid@cellcentre.offset[2])
 	xll = as.numeric(x@grid@cellcentre.offset[1])
 	names(x@data)[1] = 'z'
-	tmat = t(matrix(x@data$z,nr=x@grid@cells.dim[2],ncol=x@grid@cells.dim[1],byrow=T)[x@grid@cells.dim[2]:1,])
+	tmat = t(matrix(x@data$z,nrow=x@grid@cells.dim[2],ncol=x@grid@cells.dim[1],byrow=T)[x@grid@cells.dim[2]:1,])
 	return(as.asc(tmat,yll=yll,xll=xll,cellsize=cellsize))
 }
 sp.from.asc = function(x,projs=CRS(as.character(NA))) {
