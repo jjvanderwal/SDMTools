@@ -18,6 +18,7 @@ function(x,y,nbins,...){
 	tdata$ybin = cut(tdata$y,breaks=bins,labels=mids,include.lowest=T,right=T)
 	#get frequencies (counts) of data combinations
 	aggdata=aggregate(x=tdata$x, by=list(x=tdata$xbin, y=tdata$ybin), FUN=length)
+	names(aggdata)[3] = 'counts'
 	#create a data frame of all possible combinations of data within range
 	tasc.p=expand.grid(x=mids, y=mids)  
 	#merge tasc.p with aggdata
