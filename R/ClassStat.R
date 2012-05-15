@@ -94,7 +94,7 @@ ClassStat  = function(mat,cellsize=1,bkgd=NA,latlon=FALSE) {
 		tout$prop.like.adjacencies = sum(out.patch$n.edges.internal) / sum(out.patch$n.edges.internal+out.patch$n.edges.perimeter*2)
 		tout$aggregation.index = aggregation.index(sum(out.patch$n.cell),sum(out.patch$n.edges.internal)/2)
 		tout$lanscape.division.index = 1-sum((out.patch$n.cell / L.cell)^2)
-		tout$splitting.index = L.area / sum(out.patch$area^2)
+		tout$splitting.index = L.area^2 / sum(out.patch$area^2)
 		tout$effective.mesh.size = sum(out.patch$area^2) / L.area 
 		tout$patch.cohesion.index = ((1-(sum(out.patch$n.edges.internal)/sum(out.patch$n.edges.internal*sqrt(out.patch$n.cell))) )*((1-1/sqrt(L.cell))/10))*100
 		
