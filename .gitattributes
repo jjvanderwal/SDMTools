@@ -1,4 +1,5 @@
 * text=auto !eol
+/ChangeLog -text
 /DESCRIPTION -text
 /NAMESPACE -text
 R/COGravity.R -text
@@ -41,6 +42,7 @@ R/slope.R -text
 R/vector.averaging.R -text
 R/write.asc.R -text
 R/wt.mean.R -text
+R/zzz.R -text
 man/COGravity.Rd -text
 man/ClassStat.Rd -text
 man/ConnCompLabel.Rd -text
