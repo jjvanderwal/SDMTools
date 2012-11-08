@@ -125,7 +125,7 @@ SEXP aspect (SEXP x, SEXP widths, SEXP heights) {
 				//get the rise_run
 				double dz_dx = ((c+2*f+i) - (a+2*d+g)) / (8*width[row]);
 				double dz_dy = ((g+2*h+i) - (a+2*b+c)) / (8*height[row]);
-				if (dz_dy<small_num && dz_dx<small_num) { out[row+nrows*col] = -1;  //do this if area is flat
+				if (abs(dz_dy)<small_num && abs(dz_dx)<small_num) { out[row+nrows*col] = -1;  //do this if area is flat
 				} else { //if area is not flat
 					double aspect = 57.29578 * atan2 (dz_dy, -dz_dx); //calculate the aspect info
 					if (aspect < 0) { out[row+nrows*col] = 90.0 - aspect; 

@@ -1,4 +1,7 @@
 This is the changelog where bug fixes & improvements are described from 16 May 2012 onward.
 
+8 November 2012 - version 1.1-13
+- bugfix in aspect whereby aspect was not correctly calculated for directions between 90 & 180 degrees. thanks for the catch to RobertMiller7@u.boisestate.edu
+
 16 May 2012 - version 1.1-12
 - bugfix in ClassStats - splitting index equation corrected as Hossam Moniem <habdelmo@purdue.edu> noted the numerator was to be squared.
