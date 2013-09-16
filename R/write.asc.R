@@ -15,7 +15,7 @@ function (x, file, gz=FALSE) {
     #prep and write the data
     x[is.na(x)] <- -9999 #change na values
     x <- x[, ncol(x):1] #reorder
-    x <- rbind(x, rep("\n", ncol(x))) #add new line character
+    x <- do.call('rbind',list(x,"\n")) #add new line character
     cat(x,file=zz)
   #close the connection to the file
   close(zz)
