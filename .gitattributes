@@ -41,6 +41,7 @@ R/read.asc.R -text
 R/slope.R -text
 R/vector.averaging.R -text
 R/write.asc.R -text
+R/write.asc2.R -text
 R/wt.mean.R -text
 R/zzz.R -text
 man/COGravity.Rd -text
@@ -82,3 +83,4 @@ src/patchstats.c -text
 src/pointinpolygon.c -text
 src/slope.aspect.c -text
 src/vincenty.geodesics.c -text
+src/writeasciidata.c -text
