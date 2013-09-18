@@ -13,6 +13,6 @@ function (x, file, sigdig = 0, gz=FALSE) {
 }
 
 write.asc2.gz <-
-function (x, file, sigdig = 0,) {
+function (x, file, sigdig = 0) {
 	write.asc(x, file, sigdig=sigdig, gz=TRUE)
 }
