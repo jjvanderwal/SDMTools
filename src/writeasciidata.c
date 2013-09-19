@@ -11,8 +11,6 @@ SEXP writeascdata(SEXP nrows, SEXP ncols, SEXP xllcorner, SEXP yllcorner, SEXP c
 	//define the pointers for the data
 	PROTECT(tdata = coerceVector(tdata, REALSXP));
 	double *data = REAL(tdata); //this is a binary matrix of data
-	//PROTECT(nrows = coerceVector(nrows, INTSXP)); int nrow = INT(nrows)[0];
-	//PROTECT(ncols = coerceVector(ncols, INTSXP)); int ncol = INT(ncols)[0];
 	
 	int *dims = INTEGER(coerceVector(getAttrib(tdata, R_DimSymbol), INTSXP)); //get the dimension of the input matrix
     int nrow = dims[0]; int ncol = dims[1]; //assign the number of rows and columns in the matrix
@@ -52,40 +50,4 @@ SEXP writeascdata(SEXP nrows, SEXP ncols, SEXP xllcorner, SEXP yllcorner, SEXP c
 	UNPROTECT(2);
 	return(R_NilValue); 
 }
-/*
-cat("ncols         ", nrow(x), "\n", sep = "", file = zz)
-    cat("nrows         ", ncol(x), "\n", sep = "", file = zz)
-    cat("xllcorner     ", as.character(attr(x, "xll") - attr(x,
-        "cellsize")/2), "\n", sep = "", file = zz)
-    cat("yllcorner     ", as.character(attr(x, "yll") - attr(x,
-        "cellsize")/2), "\n", sep = "", file = zz)
-    cat("cellsize      ", as.character(attr(x, "cellsize")),
-        "\n", sep = "", file = zz)
-    cat("NODATA_value  ", -9999, "\n", sep = "", file = zz)
 
-
-
-int main()
-{
-	double * ptr_data;
-	int n = 150000000;
-	ptr_data = (double*) calloc ( n,sizeof(double) );
-	int i, j;
-	for (0;i<n;i++){ ptr_data[i] = rand() / 3;}
-	printf("finished initializing with data\n");
-	FILE * fp;
-
-	fp = fopen ("file.txt", "w+");
-	fprintf(fp, "%s %s %s %d", "We", "are", "in", 2012);
-	printf("wrote first line\n");
-	for (i=0;i<n;i++){
-		//printf("%d ",multi_dimensional_array[i]);
-		fprintf(fp,"%f ",ptr_data[i]);
-	}
-	printf("finished writing data\n");
-	fclose(fp);
-
-	free (ptr_data);
-	return 0;
-}
-*/
