@@ -31,7 +31,7 @@ SEXP writeascdata(SEXP nrows, SEXP ncols, SEXP xllcorner, SEXP yllcorner, SEXP c
 		int row, col;
 		for (col=(ncol-1); col >=0; --col) {
 			for (row=0; row<nrow; row++) {
-				if (data[row+nrow*col] == R_NilValue) {
+				if (data[row+nrow*col] == NA_REAL) {
 					fprintf(fp,"-9999 ");
 				} else {
 					fprintf(fp,"%.*f ",sigdig,data[row+nrow*col]);
@@ -50,7 +50,7 @@ SEXP writeascdata(SEXP nrows, SEXP ncols, SEXP xllcorner, SEXP yllcorner, SEXP c
 	
 	//return the output data
 	UNPROTECT(2);
-	return(ans); 
+	return(R_NilValue); 
 }
 /*
 cat("ncols         ", nrow(x), "\n", sep = "", file = zz)
