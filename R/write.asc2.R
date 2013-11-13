@@ -4,7 +4,7 @@ function (x, file, sigdig = 0, gz=FALSE) {
 	if (!inherits(x, "asc")) stop("Non convenient data")
 	if (substr(file, nchar(file) - 3, nchar(file)) != ".asc") file <- paste(file, ".asc", sep = "")
 	###write out the data
-	tt = .Call('writeascdata', nrow(x) , ncol(x) , as.character(attr(x,"xll")-attr(x,"cellsize")/2) ,
+	tt = .Call('writeascdata', ncol(x) , nrow(x) , as.character(attr(x,"xll")-attr(x,"cellsize")/2) ,
 		as.character(attr(x,"yll")-attr(x,"cellsize")/2) , as.character(attr(x, "cellsize")) , x , file , sigdig)
 	if (gz) {
 		require(R.utils)
