@@ -18,7 +18,7 @@ double a = 6378137, b = 6356752.3142,  f = 1/298.257223563;  // WGS-84 ellipsiod
  *       http://www.ngs.noaa.gov/PUBS_LIB/inverse.pdf
  */
 
-SEXP dest(SEXP latitude1, SEXP longitude1, SEXP bearing, SEXP distance) {
+SEXP Dest(SEXP latitude1, SEXP longitude1, SEXP bearing, SEXP distance) {
 	//bring in the key data
 	latitude1 = coerceVector(latitude1, REALSXP); double lat1 = REAL(latitude1)[0] * (PI/180); //first lat in radians
 	longitude1 = coerceVector(longitude1, REALSXP); double lon1 = REAL(longitude1)[0] * (PI/180); //first lon in radians
@@ -81,7 +81,7 @@ SEXP dest(SEXP latitude1, SEXP longitude1, SEXP bearing, SEXP distance) {
  * @param   {Number} lat2, lon2: second point in decimal degrees
  * @returns (Number} distance in metres between points
  */
-SEXP dist(SEXP latitude1, SEXP longitude1, SEXP latitude2, SEXP longitude2) {
+SEXP Dist(SEXP latitude1, SEXP longitude1, SEXP latitude2, SEXP longitude2) {
 	//bring in the key data
 	PROTECT(latitude1 = coerceVector(latitude1, REALSXP)); double *lat1 = REAL(latitude1);
 	PROTECT(longitude1 = coerceVector(longitude1, REALSXP)); double *lon1 = REAL(longitude1);

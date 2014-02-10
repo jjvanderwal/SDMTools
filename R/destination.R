@@ -83,7 +83,7 @@
 #' 	
 #' 
 #' @export 
-#' @useDynLib SDMTools dest
+#' @useDynLib SDMTools Dest
 destination = function(lat, lon, bearing, distance) {
 	#check the data
 	if (length(lat)!=length(lon)) stop('lat & lon must be of the same length')
@@ -99,7 +99,7 @@ destination = function(lat, lon, bearing, distance) {
 	}
 	#clatcle through and output the new data
 	for (ii in 1:nrow(out)) {
-		tt = .Call('dest',out$lat1[ii],out$lon1[ii],out$bearing[ii],out$distance[ii],PACKAGE='SDMTools')
+		tt = .Call('Dest',out$lat1[ii],out$lon1[ii],out$bearing[ii],out$distance[ii],PACKAGE='SDMTools')
 		out$lon2[ii] = tt[2]; out$lat2[ii] = tt[1]
 	}
 	#return the output
