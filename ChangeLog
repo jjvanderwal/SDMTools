@@ -1,5 +1,10 @@
 This is the changelog where bug fixes & improvements are described from 16 May 2012 onward.
 
+10 February 2014 - version xxx
+- improved write.asc which is much faster
+- altered read.asc to accept names that are upper and lowercase asc
+- changed to use roxygen2 format for helpfiles
+
 18 September 2013 - version 1.1-14
 - improved the speed at which ascii's files are written for both write.asc and
 the new write.asc2 function.

@@ -1,26 +1,40 @@
 \name{lcmw}
 \alias{lcmw}
-
-\title{ Least Cost Moving Windows Calculation }
-
-\description{ This is a moving window that for each cell returns the minimum 'cost' based on surrounding data cells and some dispersal distance cost. }
-
-\usage{ lcmw(mat, mw, mnc) }
-
-\arguments{
-	\item{mat}{a matrix of values that can be based on a raster dataset. Lower values should represent lower cost. The matrix can be a raster of class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)}
-	\item{mw}{a distance-cost matrix to be applied to each cell of 'mat'. This matrix can be dispersal costs. Lower values should represent lower cost.}
-	\item{mnc}{an integer value representing the radius for 'mw' in number of cells.}
+\title{Least Cost Moving Windows Calculation}
+\usage{
+lcmw(mat, mw, mnc)
 }
+\arguments{
+  \item{mat}{a matrix of values that can be based on a
+  raster dataset. Lower values should represent lower cost.
+  The matrix can be a raster of class 'asc' (adehabitat
+  package), 'RasterLayer' (raster package) or
+  'SpatialGridDataFrame' (sp package)}
 
-\details{ This method moves over the matrix of values, summing the moving window cost \code{mw} and the matrix \code{mat}, returning the minimum cost value. This was created to estimate the least cost path through time for all cells in a matrix (see example). }
+  \item{mw}{a distance-cost matrix to be applied to each
+  cell of 'mat'. This matrix can be dispersal costs. Lower
+  values should represent lower cost.}
 
-\value{ A matrix of values of the same dimensions and class as input \code{mat} }
-
-\author{ Jeremy VanDerWal \email{jjvanderwal@gmail.com} }
-
+  \item{mnc}{an integer value representing the radius for
+  'mw' in number of cells.}
+}
+\value{
+A matrix of values of the same dimensions and class as
+input \code{mat}
+}
+\description{
+This is a moving window that for each cell returns the
+minimum 'cost' based on surrounding data cells and some
+dispersal distance cost.
+}
+\details{
+This method moves over the matrix of values, summing the
+moving window cost \code{mw} and the matrix \code{mat},
+returning the minimum cost value. This was created to
+estimate the least cost path through time for all cells in
+a matrix (see example).
+}
 \examples{
-
 #create a simple object of class 'asc'
 tasc = as.asc(matrix(1:100,nr=10,nc=10)); print(tasc)
 
@@ -52,7 +66,8 @@ out = lcmw(tasc, tcost1, 2); print(out[1:10,1:10])
 #linear cost
 tcost = tcost/2; print(tcost)
 out = lcmw(tasc, tcost, 2); print(out[1:10,1:10])
-
 }
-
+\author{
+Jeremy VanDerWal \email{jjvanderwal@gmail.com}
+}
 
