@@ -36,7 +36,7 @@
 #' 
 #' 
 #' @export 
-#' @useDynLib SDMTools slope aspect
+#' @useDynLib SDMTools Slope Aspect
 slope <- 
 function(mat,latlon=FALSE) {
 	#check input for class for returning info
@@ -53,7 +53,7 @@ function(mat,latlon=FALSE) {
 	} else { width = height = rep(attr(mat,'cellsize'),length(getXYcoords(mat)$y)) } #get the cell width & height 
 	
 	slop = t(mat[,dim(mat)[2]:1])
-	slop = .Call('slope',slop,width,height,PACKAGE='SDMTools') #get the slope information
+	slop = .Call('Slope',slop,width,height,PACKAGE='SDMTools') #get the slope information
 	mat[,] = t(slop[dim(slop)[1]:1,]) #move all slope info to mat
 	
 	#reset the attributes of the input
@@ -80,7 +80,7 @@ function(mat,latlon=FALSE) {
 	} else { width = height = rep(attr(mat,'cellsize'),length(getXYcoords(mat)$y)) } #get the cell width & height 
 	
 	asp = t(mat[,dim(mat)[2]:1]) #reset the grid so that [1,1] is the North West corner (not the default of lower-left with reversed lat & lon)
-	asp = .Call('aspect',asp,width,height,PACKAGE='SDMTools') #get the aspect information
+	asp = .Call('Aspect',asp,width,height,PACKAGE='SDMTools') #get the aspect information
 	mat[,] = t(asp[dim(asp)[1]:1,]) #move all aspect info to mat
 
 	#reset the attributes of the input

@@ -53,7 +53,7 @@ widths are the cell widths
 heights are the cell heights
 */
 
-SEXP slope (SEXP x, SEXP widths, SEXP heights) {
+SEXP Slope (SEXP x, SEXP widths, SEXP heights) {
     //define the pointers for the data
 	PROTECT(x = coerceVector(x, REALSXP)); //data values in the matrix
 	PROTECT(widths = coerceVector(widths, REALSXP)); //data values in the matrix
@@ -93,7 +93,7 @@ SEXP slope (SEXP x, SEXP widths, SEXP heights) {
     return(ans); 
 }
 
-SEXP aspect (SEXP x, SEXP widths, SEXP heights) {
+SEXP Aspect (SEXP x, SEXP widths, SEXP heights) {
     //define the pointers for the data
 	PROTECT(x = coerceVector(x, REALSXP)); //data values in the matrix
 	PROTECT(widths = coerceVector(widths, REALSXP)); //data values in the matrix
