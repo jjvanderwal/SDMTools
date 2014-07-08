@@ -2,7 +2,7 @@
 \alias{Istat}
 \title{I Similarity Statistic for Quantifying Niche Overlap}
 \usage{
-Istat(x, y)
+Istat(x, y, old = FALSE)
 }
 \arguments{
   \item{x}{a vector or matrix of data; the matrix can be a
@@ -11,13 +11,17 @@ Istat(x, y)
 
   \item{y}{a vector or matrix of data with the same
   dimensions and class of 'x'}
+
+  \item{old}{a boolean identifying if "old" equation is to
+  be used (see description). This was kept for legacy
+  issues.}
 }
 \value{
 A single value that is the I similarity statistic
 }
 \description{
 \code{Istat} computes the I similarity statistic of Warren
-et al. 2009. It is a method for defining niche overlap from
+et al. 2008. It is a method for defining niche overlap from
 predictions of species' distributions. \cr \cr \bold{NOTE:}
 it is assumed the input data are of the same extent and
 cellsize, and all values are positive.
@@ -29,6 +33,10 @@ representing the similarity of the two distributions. The I
 similarity statistic ranges from a value of 0, where two
 distributions have no overlap, to 1 where two distributions
 are identical (Warren et al., 2008).
+
+NOTE: updated to correct equation but not to worry about
+old... see explanation at
+\url{http://enmtools.blogspot.com.au/2010_09_01_archive.html}.
 }
 \examples{
 #create some simple objects of class 'asc'
@@ -54,7 +62,7 @@ print(I) #lower niche overlap
 Jeremy VanDerWal \email{jjvanderwal@gmail.com}
 }
 \references{
-Warren, D. L., R. E. Glor, M. Turelli, and D. Funk. 2009.
+Warren, D. L., R. E. Glor, M. Turelli, and D. Funk. 2008.
 Environmental Niche Equivalency versus Conservatism:
 Quantitative Approaches to Niche Evolution. Evolution
 62:2868-2883.
