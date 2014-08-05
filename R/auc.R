@@ -45,7 +45,7 @@ auc <- function(obs,pred){
 
 	#define the n's and do checks
 	n = length(obs); if (length(which(obs %in% c(0,1)))!=n) stop('observed values must be 0 or 1') #ensure observed are values 0 or 1
-	n1 = length(which(obs==1)); n0 = length(which(obs==0))
+	n1 = as.double(length(which(obs==1))); n0 = as.double(length(which(obs==0)))
 	if (n1==0 || n1==n) return( NaN ) #if all observed 1's or 0's return NaN
 
 	###calc AUC
