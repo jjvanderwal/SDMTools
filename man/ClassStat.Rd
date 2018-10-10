@@ -7,7 +7,7 @@ ClassStat(mat, cellsize = 1, bkgd = NA, latlon = FALSE)
 \arguments{
   \item{mat}{a matrix of data with patches identified as
   classes (unique integer values) as e.g., a binary
-  lanscape of a species distribution or a vegetation map.
+  landscape of a species distribution or a vegetation map.
   Matrix can be a raster of class 'asc' (adehabitat
   package), 'RasterLayer' (raster package) or
   'SpatialGridDataFrame' (sp package)}
@@ -29,7 +29,7 @@ from the original input matrix (\code{mat}).}
 \item{n.patches}{the number of patches of a particular
 patch type or in a class.} \item{total.area}{the sum of the
 areas (m2) of all patches of the corresponding patch type.}
-\item{prop.landscape}{the proportion of the total lanscape
+\item{prop.landscape}{the proportion of the total landscape
 represented by this class} \item{patch.density}{the numbers
 of patches of the corresponding patch type divided by total
 landscape area (m2).} \item{total.edge}{the total edge
@@ -79,7 +79,7 @@ side-by-side on the map (measures the degree of aggregation
 of patch types).} \item{aggregation.index}{computed simply
 as an area-weighted mean class aggregation index, where
 each class is weighted by its proportional area in the
-landscape.} \item{lanscape.division.index}{based on the
+landscape.} \item{landscape.division.index}{based on the
 cumulative patch area distribution and is interpreted as
 the probability that two randomly chosen pixels in the
 landscape are not situated in the same patch}

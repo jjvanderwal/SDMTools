@@ -9,7 +9,7 @@
 #' \url{http://www.umass.edu/landeco/research/fragstats/fragstats.html}.
 #' 
 #' @param mat a matrix of data with patches identified as classes (unique
-#' integer values) as e.g., a binary lanscape of a species distribution or a
+#' integer values) as e.g., a binary landscape of a species distribution or a
 #' vegetation map. Matrix can be a raster of class 'asc' (adehabitat package),
 #' 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)
 #' @param cellsize cell size (in meters) is a single value representing the
@@ -62,7 +62,7 @@
 #' (measures the degree of aggregation of patch types).}
 #' \item{aggregation.index}{computed simply as an area-weighted mean class
 #' aggregation index, where each class is weighted by its proportional area in
-#' the landscape.} \item{lanscape.division.index}{based on the cumulative patch
+#' the landscape.} \item{landscape.division.index}{based on the cumulative patch
 #' area distribution and is interpreted as the probability that two randomly
 #' chosen pixels in the landscape are not situated in the same patch}
 #' \item{splitting.index}{based on the cumulative patch area distribution and
@@ -205,7 +205,7 @@ ClassStat  = function(mat,cellsize=1,bkgd=NA,latlon=FALSE) {
 		tout$max.patch.core.area = max(out.patch$core.area)
 		tout$prop.like.adjacencies = sum(out.patch$n.edges.internal) / sum(out.patch$n.edges.internal+out.patch$n.edges.perimeter*2)
 		tout$aggregation.index = aggregation.index(sum(out.patch$n.cell),sum(out.patch$n.edges.internal)/2)
-		tout$lanscape.division.index = 1-sum((out.patch$n.cell / L.cell)^2)
+		tout$landscape.division.index = 1-sum((out.patch$n.cell / L.cell)^2)
 		tout$splitting.index = L.area^2 / sum(out.patch$area^2)
 		tout$effective.mesh.size = sum(out.patch$area^2) / L.area 
 		tout$patch.cohesion.index = ((1-(sum(out.patch$n.edges.internal)/sum(out.patch$n.edges.internal*sqrt(out.patch$n.cell))) )*((1-1/sqrt(L.cell))/10))*100
